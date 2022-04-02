@@ -12,14 +12,16 @@
     <section class="form-BuscarViaje">
     <h5>Welcome to SoulTravel.com</h5>
     <label class="labelUsuario" for="label">Usuario: <label for="labelNomUsuario"></label></label>
-    <p><label for="label1">Solicitar un viaje</label></p>
+    <p><label for="label1">Buscar un Ride</label></p>
     <legend>        
-        <label class="labelgeneralesOyD" for="label2">Origen <input class="control" type="text" value="" placeholder="ubicacion actual u otra"></label><br>
+        <label class="labelgeneralesOyD" for="label2">Origen <input class="control" id="txtOrigen" type="text" value="" placeholder="ubicacion actual u otra"></label><br>
 
-        <label class="labelgeneralesOyD" for="label3">Destino <input class="control" type="text" value="" placeholder="Lugar de destino"></label><br>
-        <input class="btnConsultar" type="submit" value="Consultar"></p>
+        <label class="labelgeneralesOyD" for="label3">Destino <input class="control" id="txtDestino" type="text" value="" placeholder="Lugar de destino"></label><br>
+        <input class="btnConsultar" 
+        id="btnBuscarRide" type="submit"
+        value="Buscar Ride" onclick="ObtenerDatosRideBusqueda()"></p>
 
-        <p class="numReserva"><input class="controlNumReserva" type="text" value=""placeholder="# de viaje"><input class="btnReservar" type="submit" value="Reservar"></p><br>
+        <p class="numReserva"><input class="controlNumReserva" type="text" value=""placeholder="# de viaje"><input class="btnReservar" type="submit" value="Solicitar"></p><br>
         <br>
         <br>
         <br>   
@@ -32,21 +34,30 @@
 			</thead>
 
 			<tr>
-				<td>5684</td><td>La abundancia</td><td>Barrio del carmen</td><td>Viaje Realizado</td><td><input class="btnComprar" type="submit" value="Comprar"></td>
+				<td>5684</td><td>La abundancia</td><td>Barrio del carmen</td><td>Viaje Realizado</td><td><input class="btnComprar" type="submit" value="Solicitar Ride"></td>
 			</tr>
 			<tr>
-				<td>2341</td><td>Barrio lourdes</td><td>San martin</td><td>Viaje en espera</td><td><input class="btnComprar" type="submit" value="Comprar"></td>
+				<td>2341</td><td>Barrio lourdes</td><td>San martin</td><td>Viaje en espera</td><td><input class="btnComprar" type="submit" value="Solicitar Ride"></td>
 			</tr>
 			<tr>
-				<td>234563</td><td>Calle del amor</td><td>Zarcero</td><td>Viaje en espera</td><td><input class="btnComprar" type="submit" value="Comprar"></td>
+				<td>234563</td><td>Calle del amor</td><td>Zarcero</td><td>Viaje en espera</td><td><input class="btnComprar" type="submit" value="Solicitar Ride"></td>
 			</tr>
 			<tr>
-				<td>6234</td><td>Barrio el maria</td><td>Walmart</td><td>No disponible</td><td><input class="btnComprar" type="submit" value="Comprar"></td> 
+				<td>6234</td><td>Barrio el maria</td><td>Walmart</td><td>No disponible</td><td><input class="btnComprar" type="submit" value="Solicitar Ride"></td> 
 			</tr>
         </table>
     </legend>
 </section>
 <a class="enlaceLog" href="/Inicio/login.html">↩ Ir al Login</a>
 
+<script>
+    function ObtenerDatosRideBusqueda(){
+        let Origen = document.getElementById("txtOrigen").value;
+        let Destino = document.getElementById("txtDestino").value;
+        console.log(Origen);
+        console.log(Destino);
+    }
+</script>
+    
 </body>
 </html>
