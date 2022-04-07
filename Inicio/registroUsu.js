@@ -15,10 +15,3 @@ function GuardarDatosRegistroUsu(){
     window.alert("Usted se ah registrdo exitosamente");
     window.location.href= "login.html";
   };
-
-  function ObtenerDatosRegistroUsu(){
-    if(localStorage.getItem(("persona"))){
-      let personaN = JSON.parse(localStorage.getItem("persona"));
-      console.log(personaN.CedulaRegistro);
-    }      
-  }

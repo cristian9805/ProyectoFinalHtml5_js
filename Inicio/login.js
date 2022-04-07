@@ -1,5 +1,5 @@
-function ObtenerDatosLogin(){
-    let LocalStorage = JSON.parse(localStorage.getItem("persona"));
+function ValidarDatosLogin(){
+    var LocalStorage = JSON.parse(localStorage.getItem("persona"));
     
     //cedula y contraseña de la pantalla del login
     let cedula = document.getElementById("txtId").value;
@@ -13,11 +13,9 @@ function ObtenerDatosLogin(){
     if(cedula == cedulaGuardada && contrasenna == contrasennaGuardada){
         alert("Hola "+nombre+" bienvenido");
         FormularioLogin.reset();
+        window.location.href= "/Cliente/Buscar_viaje.html";
     }else{
-        alert("Usuario no valido"); 
+        alert("Usuario no valido, Registrese para empezar"); 
         FormularioLogin.reset();      
     }
-    
-    console.log(cedulaGuardada);
-    console.log(contrasennaGuardada);
 }
