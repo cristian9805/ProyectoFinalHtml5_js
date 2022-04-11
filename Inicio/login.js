@@ -11,7 +11,8 @@ function ValidarDatosLogin(){
         if(per.CedulaRegistroUsu === cedulaLog && per.Contrasenna1 === contrasennaLog){           
                 console.log("La cedula es del usuario: ", per.Nombres);
                 alert("Bienvenido "+ per.Nombres);
-                window.location.href= "/Cliente/Buscar_viaje.html";
+                window.location.href= "/DashBoard/Dashboard.html";
+                localStorage.setItem("NombreDelLogueado",per.Nombres);
         }else{ 
             form.reset();
         }
