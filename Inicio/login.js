@@ -13,6 +13,7 @@ function ValidarDatosLogin(){
                 alert("Bienvenido "+ per.Nombres);
                 window.location.href= "/DashBoard/Dashboard.html";
                 localStorage.setItem("NombreDelLogueado",per.Nombres);
+                localStorage.setItem("cedulaDelLogueado",per.CedulaRegistroUsu);
         }else{ 
             form.reset();
         }

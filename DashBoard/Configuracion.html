@@ -8,22 +8,25 @@
     <title>Configuraciones</title>
 </head>
 <body>
-    <a href="/DashBoard/Dashboard.html"><input class="btnEnlaces" type="submit" value="Dashboard"></a>
-    <a href="/DashBoard/Viajes.html"><input class="btnEnlaces" type="submit" value="Viajes"></a>
-    <a href="/DashBoard/Configuracion.html"><input class="btnEnlaces" type="submit" value="Configuraciones"></a>
-    <label class="labelUsuario" for="label">Usuario: <label for="labelNomUsuario"></label></label>
+    <form id="formConfig">
+        <a href="/DashBoard/Dashboard.html"><input class="btnEnlaces" type="button" value="Dashboard" onclick="IrDashboard()"></a>
+        <a href="/DashBoard/Viajes.html"><input class="btnEnlaces" type="button" value="Agregar Ride" onclick="IrAgregarRide()"></a>
+        <a href="/DashBoard/Configuracion.html"><input class="btnEnlaces" type="button" value="Configuraciones" onclick="IrConfiguraciones()"></a>
+        <a href="/Cliente/Buscar_viaje.html"><input class="btnEnlacesPrincipal" type="button" value="Menu Principal" onclick="IrMenuPrincipal()"></a>
+        <label class="labelUsuario" for="label">Usuario: <label for="labelNomUsuario" id="labelNomUsuario"></label></label>
     
     <h2>Configuracion</h2>
     <section class="form-EditarregistroUsu">
-      
+      <div id="alerta">
         <h4>Editar datos del usuario</h4>
-        <input class="control" type="text" name="" id="" placeholder="Primer apellido"/>
-        <input  class="control" type="text" name="" id="" placeholder="Segundo apellido" />
-        <input  class="control" type="text" name="" id="" placeholder="Numero de telefono"/>
-        <input  class="control" type="text" name="" id="" placeholder="Nombres"/>
+        <input class="control"  type="text" name="txtPrimerApellido" id="txtPrimerApellido" placeholder="Primer apellido"/>
+        <input  class="control"  type="text" name="txtSegundoApeliido" id="txtSegundoApeliido" placeholder="Segundo apellido" />
+        <input  class="control"  type="text" name="txtNumCel" id="txtNumCel" placeholder="Numero de telefono"/>
+        <input  class="control"  type="text" name="txtNombres" id="txtNombres" placeholder="Nombres"/>
         <label for="">Fecha de nacimiento</label>
-        <input  class="control" type="date" name="" id="" placeholder="Fecha de nacimiento"/>
-        <input  class="control" type="text" name="" id="" placeholder="Cedula"/>
+        <input  class="control"  type="date" name="txtFechaNaci" id="txtFechaNaci" placeholder="Fecha de nacimiento"/>
+        <input  class="control" disabled type="text" name="txtCedula" id="txtCedula" placeholder="Cedula"/>
+        <input  class="control"  type="text" name="txtContrasenna" id="txtContrasenna" placeholder="Contraseña"/>
   
 
         <label class="labelComentario" for="label4">Mensaje de estado</label>
@@ -31,8 +34,12 @@
     <p>Recuerde que este estado sera publico en su perfil</p>
 
         <a href=""></a>
-        <input  class="btnGuardar" type="submit" value="Guardar Cambios">
+        <input  class="btnGuardar" type="button" value="Guardar Cambios" onclick="RemplazarDatosUsuarioLogueado()">
+      </div>
+        
       </section>
       <a class="enlaceLog" href="/Inicio/login.html">↩ Ir al Login</a>
+    </form>
+    <script src="./configuracion.js" type="text/javascript"></script>
 </body>
 </html>

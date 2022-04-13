@@ -19,7 +19,7 @@ function AlmacenarEnLocalStorage(objPersonaDatos){
   localStorage.setItem("persona",arrayJson);
   
   window.alert("Usted se ah registrdo exitosamente");
-  window.location.href= "/Cliente/Buscar_viaje.html";
+  window.location.href= "/Inicio/login.html";
   
 }
 

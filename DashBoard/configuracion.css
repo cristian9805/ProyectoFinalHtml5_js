@@ -16,15 +16,15 @@ h4{
 }
 .labelUsuario{
     font-family: cursive;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    font-size: 30px;
-    letter-spacing: 2px;
-    margin: 20px;
-    text-align: left;
-    font-variant: inherit;
-    font-weight: bolder;
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+   font-size: 30px;
+   letter-spacing: 2px;
+   margin: 20px;
+   text-align: left;
+   font-variant: inherit;
+   font-weight: bolder;
 }
 .form-EditarregistroUsu{
     text-align: center;
@@ -32,7 +32,20 @@ h4{
     padding: 40px;
     margin: auto;
     margin-top: 20px;
-
+}
+.btnEnlacesPrincipal{
+    position: relative;
+    font-size: large;
+    padding: 9px;
+    letter-spacing: 1px;
+    transition: 0.1s;
+    border: none;
+    border-radius: 10px;
+}
+.btnEnlacesPrincipal:hover{
+    background: #0199ff;
+    box-shadow: 0 0 10px #0199ff, 0 0 40px #0199ff, 0 0 80px #0199ff;
+    font-weight: bold;
 }
 .btnEnlaces{
     position: relative;
@@ -84,11 +97,6 @@ h4{
     background: #08fa00;
     box-shadow: 0 0 10px #08fa00, 0 0 40px #08fa00, 0 0 80px #08fa00;
     font-weight: bold;
-}
-label{
-    font-size: large;
-    font-family: cursive;
-    font-weight: bolder;
 }
 .enlaceLog{
     font-size: 25px;
