@@ -58,7 +58,6 @@ function MostrarDatosUsuarioLogueado(){
 }
 function RemplazarDatosUsuarioLogueado() {
   const form = document.getElementById("formConfig");
-  console.log(form);
 
   //form.addEventListener("submit", function (event) {
   //event.preventDefault();
@@ -74,16 +73,18 @@ function RemplazarDatosUsuarioLogueado() {
   let contrasennaConfig = document.getElementById("txtContrasenna").value;
 
   let objPersonaNueva = JSON.parse(localStorage.getItem("persona"));
-  let listaOriginal = JSON.stringify(localStorage.getItem("persona"));
+  //let listaOriginal = JSON.stringify(localStorage.getItem("persona"));
 
   objPersonaNueva.forEach(per => {
     if (per.CedulaRegistroUsu === cedulaDelLocalStorage) {
       for (var n = 0; n < objPersonaNueva.length; n++) {
         per.Apellido1 = primerApe;
-        //console.log("array Resultado: ", objPersonaNueva[n]);
+        //console.log(per.Apellido1);
+        console.log("array Resultado: ", objPersonaNueva[n]);
 
         let arrayJson = JSON.stringify(objPersonaNueva);
         localStorage.setItem("persona", arrayJson);
+        //console.log(objPersonaNueva)
       }
     }
   });
