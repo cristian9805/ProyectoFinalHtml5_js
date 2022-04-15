@@ -7,7 +7,7 @@ function QuitarRefrescoDePantalla() {
   }
   )
 }
-//QuitarRefrescoDePantalla();///aqui ejecuto una funcion al inicio
+QuitarRefrescoDePantalla();///aqui ejecuto una funcion al inicio
 
 function MostrarInfoDelUsuEnForm(){
   var nombreUsuario = localStorage.getItem("NombreDelLogueado");
@@ -79,8 +79,13 @@ function RemplazarDatosUsuarioLogueado() {
     if (per.CedulaRegistroUsu === cedulaDelLocalStorage) {
       for (var n = 0; n < objPersonaNueva.length; n++) {
         per.Apellido1 = primerApe;
-        //console.log(per.Apellido1);
-        console.log("array Resultado: ", objPersonaNueva[n]);
+        per.Apellido2 = segApe;
+        per.CedulaRegistroUsu = cedulaCongig;
+        per.Contrasenna1 = contrasennaConfig;
+        per.Nombres = nombres;
+        per.NumTelefono = numCel;
+        per.dateFechaNaci = fechaNaci;
+        //console.log("array Resultado: ", objPersonaNueva[n]);
 
         let arrayJson = JSON.stringify(objPersonaNueva);
         localStorage.setItem("persona", arrayJson);
