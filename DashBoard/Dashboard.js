@@ -10,18 +10,14 @@ function QuitarRefrescoDePantalla() {
 function MostrarDatosEnLaTable(){
   
   let objPersona = JSON.parse(localStorage.getItem("Ride"));
-  const form = document.getElementById("formConfig"); 
   
   //dotos de la persona que esta registrada para imprimir en configuraciones
   
   objPersona.forEach(per => {
     if(per.CedulaRegistroUsu == cedulaDelLocalStorage ){// continuar aqui
-  array.forEach(element => {
-    
-  });  
-  
-  
-  const form = document.getElementById("formViajes");
+  }
+});
+    const form = document.getElementById("formViajes");
     console.log(form);
     let transaFormData = new FormData(form);
     let capturaDeTableRef = document.getElementById("jtableDashboard");
