@@ -6,20 +6,33 @@ function QuitarRefrescoDePantalla() {
     event.preventDefault();
   })
 }
+//QuitarRefrescoDePantalla()// aqui agregue un metodo que se ejecute al inicio
 function MostrarDatosEnLaTable(){
+  
+  let objPersona = JSON.parse(localStorage.getItem("Ride"));
+  const form = document.getElementById("formConfig"); 
+  
+  //dotos de la persona que esta registrada para imprimir en configuraciones
+  
+  objPersona.forEach(per => {
+    if(per.CedulaRegistroUsu == cedulaDelLocalStorage ){// continuar aqui
+  array.forEach(element => {
+    
+  });  
+  
+  
+  const form = document.getElementById("formViajes");
+    console.log(form);
     let transaFormData = new FormData(form);
     let capturaDeTableRef = document.getElementById("jtableDashboard");
     let newTableRowRef = capturaDeTableRef.insertRow(-1);
     let newTableCellRef = newTableRowRef.insertCell(0);
 }
-MostrarDatosEnLaTable();
-  /*form.addEventListener("submit",function(event){
-    event.preventDefault();
-    let transaFormData = new FormData(form);
-    let objPersonaDatos = ConvertirDatosformDataOBJ(transaFormData)
-    console.log(objPersonaDatos);
-  })*/
-QuitarRefrescoDePantalla()// aqui agregue un metodo que se ejecute al inicio
+MostrarDatosEnLaTable();// aqui agregue un metodo que se ejecute al inicio
+
+function ObtenerDatosDeLocalStorage(transaFormData){
+  
+}
 
 function MostrarInfoDelUsuEnForm(){
     var nombreUsuario = localStorage.getItem("NombreDelLogueado");
