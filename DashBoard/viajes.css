@@ -8,6 +8,9 @@ h2{
     color: #036600;
     text-decoration: underline;
 }
+.container{
+    text-align: center;
+}
 .labelUsuario{
      font-family: cursive;
     display: flex;
@@ -73,7 +76,8 @@ h2{
     font-size: 15px;
 }
 .controlNumber{
-    width: 34%;
+    text-align: center;
+    width: 60%;
     padding: 5px;
     margin: 10px;
     border-radius: 5px;
@@ -97,6 +101,19 @@ h2{
 .btnGuardar:hover{
     background: #08fa00;
     box-shadow: 0 0 10px #08fa00, 0 0 40px #08fa00, 0 0 80px #08fa00;
+    font-weight: bold;
+}
+.btnEditar{
+    font-size: 35px;
+    padding: 9px;
+    letter-spacing: 1px;
+    transition: 0.1s;
+    border: none;
+    border-radius: 10px;
+}
+.btnEditar:hover{
+    background: #ff2727;
+    box-shadow: 0 0 10px #ff2727, 0 0 40px #ff2727, 0 0 80px #ff2727;
     font-weight: bold;
 }
 .enlaceLog{

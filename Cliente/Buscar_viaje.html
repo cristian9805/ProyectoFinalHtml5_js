@@ -3,39 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
     <link rel="stylesheet" href="Buscarviaje.css">
     <title>Buscar Ride</title>
+    <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-
-    <section class="form-BuscarViaje">
-    <h5>Welcome to SoulTravel.com</h5>
-    <!--<label class="labelUsuario" id="label">Usuario: <label id="labelNomUsuario"></label></label>-->
-    <p><label for="label1">Buscar un Ride</label></p>
-    <legend>        
-        <label class="labelgeneralesOyD" for="label2">Origen <input class="control" id="txtOrigen" type="text" value="" placeholder="ubicacion actual u otra"></label><br>
-
-        <label class="labelgeneralesOyD" for="label3">Destino <input class="control" id="txtDestino" type="text" value="" placeholder="Lugar de destino"></label><br>
-        <input class="btnConsultar" 
-        id="btnBuscarRide" type="submit"
-        value="Buscar Ride" onclick="ObtenerDatosRideBusqueda()"></p>
-
-        <p class="numReserva"><input class="controlNumReserva" type="text" value=""placeholder="# de viaje"><input class="btnReservar" type="submit" value="Solicitar"></p><br>
-        <br>
-        <br>
-        <br>   
-    </legend>
-</section>
-<table id="jtablePrincipal" class="jtable">  
+    <div class="container">
+        <section class="form-BuscarViaje">
+            <h5>Welcome to SoulTravel.com</h5>
+            <!--<label class="labelUsuario" id="label">Usuario: <label id="labelNomUsuario"></label></label>-->
+            <p><label for="label1">Buscar un Ride</label></p>
+            <legend>        
+                <label class="labelgeneralesOyD" for="label2">Origen <input class="control" id="txtOrigen" type="text" value="" placeholder="ubicacion actual u otra"></label><br>
+        
+                <label class="labelgeneralesOyD" for="label3">Destino <input class="control" id="txtDestino" type="text" value="" placeholder="Lugar de destino"></label><br>
+                <input class="btnConsultar" 
+                id="btnBuscarRide" type="submit"
+                value="Buscar Ride" onclick="ObtenerDatosRideBusqueda()"></p>
+        
+                <p class="numReserva"><input class="controlNumReserva" type="text" value=""placeholder="# de viaje"><input class="btnReservar" type="submit" value="Solicitar"></p><br>
+                <br>
+                <br>
+                <br>   
+            </legend>
+        </section>
+    </div>
+    <div class="container">
+        <table id="jtablePrincipal" class="jtable">  
 			
-    <tr class="Diseñocss">
-        <th>Numero de viaje</th><th>Salida</th><th>Destino</th><th>Opciones</th>
-    </tr>
-</table>
+            <tr class="Diseñocss">
+                <th>Numero de viaje</th><th>Salida</th><th>Destino</th><th>Opciones</th>
+            </tr>
+        </table>
+    </div>    
 <a class="enlaceLog" href="/Inicio/login.html">↩ Ir al Login</a>
 
 <script src="BuscarViaje.js" type="text/javascript"></script>
+<script>src="/Bootstrap/css/bootstrap.min.js"</script>
     
 </body>
 </html>

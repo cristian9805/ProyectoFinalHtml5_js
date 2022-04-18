@@ -2,6 +2,11 @@ body{
     text-align: center;
     background-image: url(/Imagenes/clean-g1439c169c_1920.jpg);
 }
+.container{
+    font-size: 10px;
+    margin: 100px;
+    padding:0%;
+}
 .a:hover{
     text-decoration:underline ;
     color: black;
@@ -43,8 +48,8 @@ h4{
 .form-login{
     background-image: url(/Imagenes/clean-g1439c169c_1920.jpg);
     text-align: center;
-    width: 360px;
-    padding: 90px;
+    width: 400px;
+    padding: 100px;
     margin: auto;
     margin-top: 60px;
     box-shadow: 2px 2px 90px;

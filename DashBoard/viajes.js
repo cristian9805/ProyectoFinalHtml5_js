@@ -50,12 +50,23 @@ function CargarDatosDeLosRides(){
     const formViajes = document.getElementById("formViajes");
     let arrayRides = JSON.parse(localStorage.getItem("Ride"));
     let numViajeRef = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
+    
+    let numViajeDeTxt = document.getElementById("txtNumViaje").value;
+    console.log(numViajeDeTxt);
     //datos del Viaje que el usuario seleccionado
     try {
       if(arrayRides.length === 0){
-        document.getElementById("btnEditarCambios").style.visibility = "hidden";   
-        document.getElementById("btnGuardarCambios").style.visibility = "visible"; 
+        alert("entro al 1")
+        //document.getElementById("btnGuardarCambios").style.visibility = "visible";
+        //document.getElementById("btnEditarCambios").style.visibility = "hidden"; 
+      }else if (numViajeRef.length === 0){
+        alert("entro al 2")
+        //document.getElementById("btnGuardarCambios").style.visibility = "visible";
+        //document.getElementById("btnEditarCambios").style.visibility = "hidden"; 
+        
       }else{
+        document.getElementById("btnGuardarCambios").style.visibility = "visible";
+        document.getElementById("btnEditarCambios").style.visibility = "hidden"; 
         arrayRides.forEach(rides => {
           if(rides.NumViaje == numViajeRef ){
             
@@ -79,7 +90,7 @@ function CargarDatosDeLosRides(){
       }
     
     } catch (err) {
-      
+      //alert("entro al error");
     }
     
 }
@@ -102,8 +113,6 @@ function EditarDatosDelViajeSeleccionado(){
 
     arrayRides.forEach(editarRide =>{
       if(editarRide.NumViaje === numViajeLocalStorage){
-        document.getElementById("btnEditarCambios").style.visibility = "visible";   
-        document.getElementById("btnGuardarCambios").style.visibility = "hidden"; 
         for (var n = 0; n < arrayRides.length; n++) {
           editarRide.NumViaje = numViajeRef;
           editarRide.LugarSalida = salidaRef;
@@ -116,15 +125,10 @@ function EditarDatosDelViajeSeleccionado(){
           localStorage.setItem("Ride", arrayJson);            
         }
       }else{
-        document.getElementById("btnEditarCambios").style.visibility = "hidden";   
-        document.getElementById("btnGuardarCambios").style.visibility = "visible"; 
       }
     });
   
   } catch (err) {
-  
-    document.getElementById("btnGuardarCambios").style.visibility = "visible";
-    document.getElementById("btnEditarCambios").style.visibility = "hidden"; 
   
   }
 }
@@ -154,10 +158,10 @@ function IrConfiguraciones(){
 function IrMenuPrincipal(){
   MensajeParaCerrarseccionUsu();
 }
-  //***************************************** LLAMADO DE LOS METODOS**************************
-  //QuitarRefrescoDePantalla()
-  MostrarInfoDelUsuEnForm();
+//***************************************** LLAMADO DE LOS METODOS**************************
   CargarDatosDeLosRides();
+  QuitarRefrescoDePantalla()
+  MostrarInfoDelUsuEnForm();
   EditarDatosDelViajeSeleccionado();
   //***************************************** LLAMADO DE LOS METODOS**************************
   
