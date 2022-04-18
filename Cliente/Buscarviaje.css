@@ -15,7 +15,7 @@ th ,td{
     border: solid 1px black;
     padding: 20px;
 }
-thead{
+.Diseñocss{
     background-color: #42663e;
     border-bottom: solid 5px #08fa00;
     color: white;

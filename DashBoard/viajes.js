@@ -1,20 +1,13 @@
+function QuitarRefrescoDePantalla() {
+  const form = document.getElementById("formViajes");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+  })
+}
 function MostrarInfoDelUsuEnForm(){
     var nombreUsuario = localStorage.getItem("NombreDelLogueado");
     document.getElementById("labelNomUsuario").textContent = nombreUsuario;
-}
-MostrarInfoDelUsuEnForm();
-
-function IrDashboard(){
-  window.location.href= "/DashBoard/Dashboard.html";
-}
-function IrAgregarRide(){
-  window.location.href= "/DashBoard/Viajes.html";
-}
-function IrConfiguraciones(){
-  window.location.href= "/DashBoard/Configuracion.html";
-}
-function IrMenuPrincipal(){
-  window.location.href= "/Cliente/Buscar_viaje.html";
 }
 function ObjViaje(){
     const form = document.getElementById("formViajes"); 
@@ -22,8 +15,8 @@ function ObjViaje(){
     let objViajeDatos = ConvertirDatosformDataOBJ(transaFormData)
     AlmacenarEnLocalStorage(objViajeDatos)
     form.reset();
-  }
-  function AlmacenarEnLocalStorage(objViajeDatos){
+}
+function AlmacenarEnLocalStorage(objViajeDatos){
     // || esto significa ,que si esta vacio o null "||" entonces es un array vacio
     let datos = JSON.parse(localStorage.getItem("Ride")) || [];
     datos.push(objViajeDatos); 
@@ -32,8 +25,8 @@ function ObjViaje(){
     
     window.alert("Ride guardado exitosamente");
     
-  }
-  function ConvertirDatosformDataOBJ(transaFormData){
+}
+function ConvertirDatosformDataOBJ(transaFormData){
 
     let NumViaje = transaFormData.get("txtNumViaje");
     let LugarSalida = transaFormData.get("txtLugarSalida");
@@ -52,5 +45,120 @@ function ObjViaje(){
       "CedulaDelCreador": cedulaCreador
       
     }
+}
+function CargarDatosDeLosRides(){
+    const formViajes = document.getElementById("formViajes");
+    let arrayRides = JSON.parse(localStorage.getItem("Ride"));
+    let numViajeRef = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
+    //datos del Viaje que el usuario seleccionado
+    try {
+      if(arrayRides.length === 0){
+        document.getElementById("btnEditarCambios").style.visibility = "hidden";   
+        document.getElementById("btnGuardarCambios").style.visibility = "visible"; 
+      }else{
+        arrayRides.forEach(rides => {
+          if(rides.NumViaje == numViajeRef ){
+            
+            let numViaje = rides.NumViaje;
+            let salida= rides.LugarSalida;
+            let lugarDestino = rides.LugarDestino;
+            let marca = rides.MarcaAuto;
+            let nunPlaca = rides.NumPlaca;
+            let cantPasajeros = rides.CantPasajeros;
+            
+      
+            document.getElementById("txtNumViaje").value = numViaje;
+            document.getElementById("txtLugarSalida").value = salida;
+            document.getElementById("txtLugarDestino").value = lugarDestino;
+            document.getElementById("txtMarcaAuto").value = marca;
+            document.getElementById("txtNumPlaca").value = nunPlaca;
+            document.getElementById("SplitCantPasajeros").value = cantPasajeros;
+          }
+          
+        }); 
+      }
+    
+    } catch (err) {
+      
+    }
+    
+}
+function EditarDatosDelViajeSeleccionado(){
+  const form = document.getElementById("formViajes");
+  console.log(form);
+  var numViajeRef = document.getElementById("txtNumViaje").value;
+  var salidaRef = document.getElementById("txtLugarSalida").value;
+  var lugarDestinoRef = document.getElementById("txtLugarDestino").value;
+  var marcaRef = document.getElementById("txtMarcaAuto").value;
+  var nunPlacaRef = document.getElementById("txtNumPlaca").value;
+  var cantPasajerosRef = document.getElementById("SplitCantPasajeros").value;
+  
+  let arrayRides = JSON.parse(localStorage.getItem("Ride"));
+  console.log(arrayRides);
+
+  let numViajeLocalStorage = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
+  
+  try {
+
+    arrayRides.forEach(editarRide =>{
+      if(editarRide.NumViaje === numViajeLocalStorage){
+        document.getElementById("btnEditarCambios").style.visibility = "visible";   
+        document.getElementById("btnGuardarCambios").style.visibility = "hidden"; 
+        for (var n = 0; n < arrayRides.length; n++) {
+          editarRide.NumViaje = numViajeRef;
+          editarRide.LugarSalida = salidaRef;
+          editarRide.LugarDestino = lugarDestinoRef;
+          editarRide.MarcaAuto = marcaRef;
+          editarRide.NumPlaca = nunPlacaRef;
+          editarRide.CantPasajeros =cantPasajerosRef;
+  
+          let arrayJson = JSON.stringify(arrayRides);
+          localStorage.setItem("Ride", arrayJson);            
+        }
+      }else{
+        document.getElementById("btnEditarCambios").style.visibility = "hidden";   
+        document.getElementById("btnGuardarCambios").style.visibility = "visible"; 
+      }
+    });
+  
+  } catch (err) {
+  
+    document.getElementById("btnGuardarCambios").style.visibility = "visible";
+    document.getElementById("btnEditarCambios").style.visibility = "hidden"; 
+  
   }
+}
+
+function MensajeParaCerrarseccionUsu(){
+  var respuesta = window.confirm("Esta sesión será finalizada: Deseas continuar"); 
+  if(respuesta === true){
+    localStorage.removeItem("cedulaDelLogueado");
+    localStorage.removeItem("NombreDelLogueado");
+    window.location.href= "/Cliente/Buscar_viaje.html";
+  }else{
+    window.location.reload();
+  }
+}
+
+function IrDashboard(){
+  window.location.href= "/DashBoard/Dashboard.html";
+  localStorage.removeItem("ViajeSeleccionado");
+  localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
+}
+function IrAgregarRide(){
+  window.location.href= "/DashBoard/Viajes.html";
+}
+function IrConfiguraciones(){
+  window.location.href= "/DashBoard/Configuracion.html";
+}
+function IrMenuPrincipal(){
+  MensajeParaCerrarseccionUsu();
+}
+  //***************************************** LLAMADO DE LOS METODOS**************************
+  //QuitarRefrescoDePantalla()
+  MostrarInfoDelUsuEnForm();
+  CargarDatosDeLosRides();
+  EditarDatosDelViajeSeleccionado();
+  //***************************************** LLAMADO DE LOS METODOS**************************
+  
 

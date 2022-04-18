@@ -15,19 +15,6 @@ function MostrarInfoDelUsuEnForm(){
 }
 MostrarInfoDelUsuEnForm();///aqui ejecuto una funcion al inicio
 
-function IrDashboard(){
-  window.location.href= "/DashBoard/Dashboard.html";
-}
-function IrAgregarRide(){
-  window.location.href= "/DashBoard/Viajes.html";
-}
-function IrConfiguraciones(){
-  window.location.href= "/DashBoard/Configuracion.html";
-}
-function IrMenuPrincipal(){
-  window.location.href= "/Cliente/Buscar_viaje.html";
-}
-
 function MostrarDatosUsuarioLogueado(){
   let objPersona = JSON.parse(localStorage.getItem("persona"));
   let cedulaDelLocalStorage = localStorage.getItem("cedulaDelLogueado"); 
@@ -87,14 +74,36 @@ function RemplazarDatosUsuarioLogueado() {
         per.dateFechaNaci = fechaNaci;
         //console.log("array Resultado: ", objPersonaNueva[n]);
 
-        let arrayJson = JSON.stringify(objPersonaNueva);
-        localStorage.setItem("persona", arrayJson);
+        let stringRide = JSON.stringify(objPersonaNueva);
+        localStorage.setItem("persona", stringRide);
         //console.log(objPersonaNueva)
       }
     }
   });
 
 }
-
-
 MostrarDatosUsuarioLogueado();///aqui ejecuto una funcion al inicio
+
+function MensajeParaCerrarseccionUsu(){
+  var respuesta = window.confirm("Esta sesión será finalizada: Deseas continuar"); 
+  if(respuesta === true){
+    localStorage.removeItem("cedulaDelLogueado");
+    localStorage.removeItem("NombreDelLogueado");
+    window.location.href= "/Cliente/Buscar_viaje.html";
+  }else{
+    window.location.reload();
+  }
+}
+
+function IrDashboard(){
+  window.location.href= "/DashBoard/Dashboard.html";
+}
+function IrAgregarRide(){
+  window.location.href= "/DashBoard/Viajes.html";
+}
+function IrConfiguraciones(){
+  window.location.href= "/DashBoard/Configuracion.html";
+}
+function IrMenuPrincipal(){
+  MensajeParaCerrarseccionUsu();
+}

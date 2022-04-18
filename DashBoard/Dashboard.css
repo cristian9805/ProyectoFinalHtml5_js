@@ -27,7 +27,7 @@ th ,td{
     border: solid 1px black;
     padding: 20px;
 }
-thead{
+.Diseñocss{
     background-color: #42663e;
     border-bottom: solid 5px #08fa00;
     color: white;
@@ -90,6 +90,20 @@ tr:hover td{
 .btnEnlaces:hover{
     background: #08fa00;
     box-shadow: 0 0 10px #08fa00, 0 0 40px #08fa00, 0 0 80px #08fa00;
+    font-weight: bold;
+}
+.btnEliminar{
+    position: relative;
+    font-size: large;
+    padding: 9px;
+    letter-spacing: 1px;
+    transition: 0.1s;
+    border: none;
+    border-radius: 10px;
+}
+.btnEliminar:hover{
+    background: #ff1111;
+    box-shadow: 0 0 10px #ff1111, 0 0 40px #ff1111, 0 0 80px #ff1111;
     font-weight: bold;
 }
 h2{
