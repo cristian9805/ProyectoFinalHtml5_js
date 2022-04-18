@@ -52,21 +52,12 @@ function CargarDatosDeLosRides(){
     let numViajeRef = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
     
     let numViajeDeTxt = document.getElementById("txtNumViaje").value;
-    console.log(numViajeDeTxt);
+    console.log(numViajeRef);
     //datos del Viaje que el usuario seleccionado
-    try {
-      if(arrayRides.length === 0){
-        alert("entro al 1")
-        //document.getElementById("btnGuardarCambios").style.visibility = "visible";
-        //document.getElementById("btnEditarCambios").style.visibility = "hidden"; 
-      }else if (numViajeRef.length === 0){
-        alert("entro al 2")
-        //document.getElementById("btnGuardarCambios").style.visibility = "visible";
-        //document.getElementById("btnEditarCambios").style.visibility = "hidden"; 
-        
-      }else{
-        document.getElementById("btnGuardarCambios").style.visibility = "visible";
-        document.getElementById("btnEditarCambios").style.visibility = "hidden"; 
+    console.log(arrayRides.length);
+    try { 
+        //document.getElementById("btnGuardarCambios").style.visibility = "hidden";
+        //document.getElementById("btnEditarCambios").style.visibility = "visible";        
         arrayRides.forEach(rides => {
           if(rides.NumViaje == numViajeRef ){
             
@@ -84,11 +75,10 @@ function CargarDatosDeLosRides(){
             document.getElementById("txtMarcaAuto").value = marca;
             document.getElementById("txtNumPlaca").value = nunPlaca;
             document.getElementById("SplitCantPasajeros").value = cantPasajeros;
-          }
           
+          }
         }); 
-      }
-    
+      
     } catch (err) {
       //alert("entro al error");
     }
