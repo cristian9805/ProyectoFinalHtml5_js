@@ -61,7 +61,7 @@ function GuardarYMostrarRidesDelUsuEnLocalStorage(){
         
         btnEliminar.textContent = "Eliminar"// agrega el texto al boton
         btnEditar.textContent = "Editar"// agrega el texto al boton
-        
+        btnEditar.style.width = '91px'
         newCellButtons.appendChild(btnEliminar); //agrega los botones a la celda
         newCellButtons.appendChild(btnEditar); //agrega los botones a la celda
             

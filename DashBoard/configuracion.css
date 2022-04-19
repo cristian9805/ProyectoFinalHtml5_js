@@ -28,8 +28,7 @@ h4{
 }
 .form-EditarregistroUsu{
     text-align: center;
-    width: 500px;
-    padding: 40px;
+    padding: 10px;
     margin: auto;
     margin-top: 20px;
 }
@@ -78,17 +77,18 @@ h4{
     font-weight: bolder;
 }
 .txtEstado{
-    font-size: 30px;
     font-family: cursive;
-    margin: auto;
+    font-size: 100%;
+    margin: 0%;
     border-top: #036600;
-    border-radius: 10px;
+    border-radius: 100px;
+    text-align: center;
+    width: auto;
     background-image: url(/Imagenes/degradado-difuminado-verde_3840x2400_xtrafondos.com.jpg);
 }
 .btnGuardar{
     font-size: 35px;
-    padding: 9px;
-    letter-spacing: 1px;
+    padding: 8px;
     transition: 0.1s;
     border: none;
     border-radius: 10px;
@@ -103,4 +103,31 @@ h4{
     font-weight: bold;
     font-family:Georgia, 'Times New Roman', Times, serif;
     color: #036600;
+}
+.container{
+    width: 85%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.article{
+    width: 70%;
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 800px){
+    .container{
+        width: 100%;
+    }
+    .article{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 800px){
+    .txtEstado{
+        font-size: 100%;
+    }
 }

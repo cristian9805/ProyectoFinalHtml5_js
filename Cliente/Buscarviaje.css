@@ -46,12 +46,13 @@ tr:hover td{
 
 /*ediciones genberales*/
 
-h5{
+.h5label{
     font-family:cursive;
-    font-size: 65px;
+    font-size: 200%;
     color: #036600;
     padding: 0%;
     width: auto;
+    font-weight: bold;
 }
 p{
     font-family:cursive;
@@ -97,10 +98,8 @@ table{
 
 .btnReservar{
     font-size: 23px;
-    padding: 9px;
-    letter-spacing: 1px;
     transition: 0.1s;
-    border: none;
+    text-align: center;
     border-radius: 10px;
 }
 .btnReservar:hover{
@@ -153,4 +152,11 @@ table{
     font-weight: bold;
     font-family:Georgia, 'Times New Roman', Times, serif;
     color: #036600;
+}
+.container{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
 }

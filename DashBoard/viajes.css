@@ -33,10 +33,6 @@ h2{
 }
 .form_viajes{
     text-align: center;
-    width: 500px;
-    padding: 40px;
-    margin: auto;
-    margin-top: 20px;
 }
 .btnEnlaces{
     position: relative;
@@ -122,3 +118,27 @@ h2{
     font-family:Georgia, 'Times New Roman', Times, serif;
     color: #036600;
 }
+.container{
+    width: 85%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.article{
+    width: 70%;
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 800px){
+    .container{
+        width: 100%;
+    }
+    .article{
+        width: 100%;
+    }
+    
+}
+

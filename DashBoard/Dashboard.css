@@ -25,7 +25,6 @@ background-image: url(/Imagenes/clean-g1439c169c_1920.jpg);
 }
 th ,td{
     border: solid 1px black;
-    padding: 20px;
 }
 .Diseñocss{
     background-color: #42663e;
@@ -132,4 +131,27 @@ h2{
     font-family:Georgia, 'Times New Roman', Times, serif;
     color: #036600;
 }
+.container{
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+@media screen and (max-width: 800px){
+    .container{
+        width: 100%;
+    }
+    .article{
+        width: 100%;
+    }
+    .BotonesPrincipales{
+        width: 100%;
+    }
+    .irLogin{
+        width: 100%;
+    }
+}
+
+
+
 

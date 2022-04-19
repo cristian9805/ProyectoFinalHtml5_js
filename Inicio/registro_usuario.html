@@ -9,25 +9,24 @@
     <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
   </head>
   <body>
-    <form id="formularioRegistroUsu">
-      <section class="form-registroUsu">
-        <h4>Registro de usuario</h4>
-        <input class= "control" type="text" name="txtApellido1" id="txtApellido1" placeholder="Primer apellido"/>
-        <input  class="control" type="text" name="txtApellido2" id="txtApellido2" placeholder="Segundo apellido" />
-        <input  class="control" type="text" name="txtNumTelefono" id="txtNumTelefono" placeholder="Numero de telefono"/>
-        <input  class="control" type="text" name="txtNombres" id="txtNombres" placeholder="Nombres"/>
-        <label for="">Fecha de nacimiento</label>
-        <input  class="control" type="date" name="dateFechaNaci" id="dateFechaNaci" placeholder="Fecha de nacimiento"/>
-        <input  class="control" type="text" name="txtCedulaRegistroUsu" id="txtCedulaRegistroUsu" placeholder="Cedula"/>
-        <input  class="control" type="password" name="txtContrasenna1" id="txtContrasenna1" placeholder="Contraseña"/>
-        <input  class="control" type="password" name="txtContrasenna2" id="txtContrasenna2" placeholder="Repita la contraseña"/>
-        <p><label for="label1">¿Ya eres usuario?</label></p>
-        <p><a class="enlaceNuevoUsu" href="/Inicio/login.html">Inicia sección</a></p>
-        <p><input class="btnRegistrar" type="button" value="Registrar" onclick="ObjPersona()"
-        ></p>     
-      </section>
-    </form>
-      
+    <div class="container">
+      <form class="" id="formularioRegistroUsu">
+          <label class="labelTitulo">Registro de usuario</label>
+          <input class= "control" type="text" name="txtApellido1" id="txtApellido1" placeholder="Primer apellido"/>
+          <input  class="control" type="text" name="txtApellido2" id="txtApellido2" placeholder="Segundo apellido" />
+          <input  class="control" type="text" name="txtNumTelefono" id="txtNumTelefono" placeholder="Numero de telefono"/>
+          <input  class="control" type="text" name="txtNombres" id="txtNombres" placeholder="Nombres"/>
+          <label for="">Fecha de nacimiento</label>
+          <input  class="control" type="date" name="dateFechaNaci" id="dateFechaNaci" placeholder="Fecha de nacimiento"/>
+          <input  class="control" type="text" name="txtCedulaRegistroUsu" id="txtCedulaRegistroUsu" placeholder="Cedula"/>
+          <input  class="control" type="password" name="txtContrasenna1" id="txtContrasenna1" placeholder="Contraseña"/>
+          <input  class="control" type="password" name="txtContrasenna2" id="txtContrasenna2" placeholder="Repita la contraseña"/>
+          <p><label for="label1">¿Ya eres usuario?</label></p>
+          <p><a class="enlaceNuevoUsu" href="/Inicio/login.html">Inicia sección</a></p>
+          <p><input class="btnRegistrar" type="button" value="Registrar" onclick="ObjPersona()"
+          ></p> 
+      </form>
+    </div>   
     <script src="./registroUsu.js" type="text/javascript"></script>
     <script>src="/Bootstrap/css/bootstrap.min.js"</script>
   </body>

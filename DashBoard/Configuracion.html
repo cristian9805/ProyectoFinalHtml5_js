@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
 </head>
 <body>
+  <div class="container">
     <form id="formConfig">
       <input class="btnEnlaces" type="submit" value="Dashboard" onclick="IrDashboard()">
       <input class="btnEnlaces" type="submit" value="Agregar Ride" onclick="IrAgregarRide()">
@@ -31,19 +32,21 @@
           <input class="control" disabled type="text" name="txtCedula" id="txtCedula" placeholder="Cedula" />
           <input class="control" type="password" name="txtContrasenna" id="txtContrasenna" placeholder="Contraseña" />
     
-    
+          
           <label class="labelComentario" for="label4">Mensaje de estado</label>
-          <p><input class="txtEstado" type="text" name="" id="" placeholder="Escriba el mensaje"></p>
+          <div class="clasbtnGuarar">
+            <p><input class="txtEstado" type="text" name="" id="" placeholder="Escriba el mensaje"></p>
+          </div>
           <p>Recuerde que este estado sera publico en su perfil</p>
     
-          <a href=""></a>
-          <input class="btnGuardar" type="button" value="Guardar Cambios" onclick="RemplazarDatosUsuarioLogueado()">
+          <a href=""></a>    
+          <input class="btnGuardar" type="button" value="Guardar Cambios" onclick="RemplazarDatosUsuarioLogueado()"><br><br>   
         </div>
-    
       </section>
       <a class="enlaceLog" href="/Inicio/login.html">↩ Ir al Login</a>
     </form>
-    <script src="./configuracion.js" type="text/javascript"></script>
-    <script>src="/Bootstrap/css/bootstrap.min.js"</script>
+  </div>
+  <script src="./configuracion.js" type="text/javascript"></script>
+  <script>src="/Bootstrap/css/bootstrap.min.js"</script>
 </body>
 </html>
