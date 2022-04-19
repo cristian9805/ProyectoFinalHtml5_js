@@ -67,19 +67,25 @@ function GuardarYMostrarRidesDelUsuEnLocalStorage(){
             
           //estos eventos extraen el numero de vieje para usuarlo para extraer los datos de ese mismo viaje
           btnEliminar.addEventListener("click", (event)=>{
-            let obj = event.target.parentNode.parentNode
-            var numViajeRef = obj.getElementsByTagName("td")[0].textContent;
-            localStorage.setItem("NumDeViajeSeleccionadoEnTabla",numViajeRef);
+            var respuesta = window.confirm("Estas seguro que desea eliminar este Ride"); 
+            if(respuesta === true){
+              let obj = event.target.parentNode.parentNode
+              var numViajeRef = obj.getElementsByTagName("td")[0].textContent;
+              localStorage.setItem("NumDeViajeSeleccionadoEnTabla",numViajeRef);
   
-            let numViajeDeLocalStorage = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
-            let arrayRides = JSON.parse(localStorage.getItem("Ride"));        
-            //Obtiene el index Del Array
-            let indexDelArray = arrayRides.findIndex(ride => ride.NumViaje === numViajeDeLocalStorage);
-            arrayRides.splice(indexDelArray,1)// el ,1 significa que solo elimine un elemento
-            //guardar el nuevo array para guardarlo en el local storage
-            let newArray = JSON.stringify(arrayRides); // lo converto a string para poder remplazarlo por el otro
-            localStorage.setItem("Ride",newArray); // aqui lo remplazo      
-            location.reload("/DashBoard/Dashboard.html");
+              let numViajeDeLocalStorage = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
+              let arrayRides = JSON.parse(localStorage.getItem("Ride"));        
+              //Obtiene el index Del Array
+              let indexDelArray = arrayRides.findIndex(ride => ride.NumViaje === numViajeDeLocalStorage);
+              arrayRides.splice(indexDelArray,1)// el ,1 significa que solo elimine un elemento
+              //guardar el nuevo array para guardarlo en el local storage
+              let newArray = JSON.stringify(arrayRides); // lo converto a string para poder remplazarlo por el otro
+              localStorage.setItem("Ride",newArray); // aqui lo remplazo      
+              location.reload("/DashBoard/Dashboard.html");
+            }else{
+              window.location.reload();
+            }
+            
           });
         
           btnEditar.addEventListener("click", (event)=>{
@@ -115,6 +121,7 @@ function MensajeParaCerrarseccionUsu(){
     window.location.reload();
   }
 }
+
 
 function IrDashboard(){
   window.location.href= "/DashBoard/Dashboard.html";
