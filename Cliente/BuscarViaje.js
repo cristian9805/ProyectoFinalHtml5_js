@@ -1,9 +1,7 @@
-function MostrarDatosDeLosRides(){
-    var table = document.getElementById("jtablePrincipal");
-    
-
-    let arrayRides = JSON.parse(localStorage.getItem("Ride"));
-    arrayRides.forEach(rides =>{
+function MostrarDatosDeLosRides(){    
+    try{
+        let arrayRides = JSON.parse(localStorage.getItem("Ride"));
+        arrayRides.forEach(rides =>{
         let idDeLaTablaPrincipal = document.getElementById("jtablePrincipal");
       
         let newRoW = idDeLaTablaPrincipal.insertRow(-1); 
@@ -25,8 +23,9 @@ function MostrarDatosDeLosRides(){
         btnEliminar.setAttribute("id","btnEliminar");
         
     });
-    
-    
+    }catch(error){
+
+    }
 }
 function CambiarEstiloDeBotonReservarTable(){
     document.getElementById("btnEliminar").style.fontSize = "25px";

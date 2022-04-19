@@ -3,41 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <link rel="stylesheet" href="configuracion.css">
     <title>Configuraciones</title>
     <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
 </head>
 <body>
     <form id="formConfig">
-        <input class="btnEnlaces" type="submit" value="Dashboard" onclick="IrDashboard()">
-        <input class="btnEnlaces" type="submit" value="Agregar Ride" onclick="IrAgregarRide()">
-        <input class="btnEnlaces" type="submit" value="Configuraciones" onclick="IrConfiguraciones()">
-        <input class="btnEnlacesPrincipal" type="submit" value="Menu Principal" onclick="IrMenuPrincipal()">
-        <label class="labelUsuario" for="label">Usuario: <label for="labelNomUsuario" id="labelNomUsuario"></label></label>
+      <input class="btnEnlaces" type="submit" value="Dashboard" onclick="IrDashboard()">
+      <input class="btnEnlaces" type="submit" value="Agregar Ride" onclick="IrAgregarRide()">
+      <input class="btnEnlaces" type="submit" value="Configuraciones" onclick="IrConfiguraciones()">
+      <input class="btnEnlacesPrincipal" type="submit" value="Menu Principal" onclick="IrMenuPrincipal()">
+      <label class="labelUsuario" for="label">Usuario: <label for="labelNomUsuario" id="labelNomUsuario"></label></label>
     
-    <h2>Configuracion</h2>
-    <section class="form-EditarregistroUsu">
-      <div id="alerta">
-        <h4>Editar datos del usuario</h4>
-        <input class="control"  type="text" name="txtPrimerApellido" id="txtPrimerApellido" placeholder="Primer apellido"/>
-        <input  class="control"  type="text" name="txtSegundoApeliido" id="txtSegundoApeliido" placeholder="Segundo apellido" />
-        <input  class="control"  type="text" name="txtNumCel" id="txtNumCel" placeholder="Numero de telefono"/>
-        <input  class="control"  type="text" name="txtNombres" id="txtNombres" placeholder="Nombres"/>
-        <label for="">Fecha de nacimiento</label>
-        <input  class="control"  type="date" name="txtFechaNaci" id="txtFechaNaci" placeholder="Fecha de nacimiento"/>
-        <input  class="control" disabled type="text" name="txtCedula" id="txtCedula" placeholder="Cedula"/>
-        <input  class="control"  type="text" name="txtContrasenna" id="txtContrasenna" placeholder="Contraseña"/>
-  
-
-        <label class="labelComentario" for="label4">Mensaje de estado</label>
-    <p><input class="txtEstado" type="text" name="" id="" placeholder="Escriba el mensaje"></p>
-    <p>Recuerde que este estado sera publico en su perfil</p>
-
-        <a href=""></a>
-        <input  class="btnGuardar" type="button" value="Guardar Cambios" onclick="RemplazarDatosUsuarioLogueado()">
-      </div>
-        
+      <h2>Configuracion</h2>
+      <section class="form-EditarregistroUsu">
+        <div id="alerta">
+          <h4>Editar datos del usuario</h4>
+          <input class="control" type="text" name="txtPrimerApellido" id="txtPrimerApellido"
+            placeholder="Primer apellido" />
+          <input class="control" type="text" name="txtSegundoApeliido" id="txtSegundoApeliido"
+            placeholder="Segundo apellido" />
+          <input class="control" type="text" name="txtNumCel" id="txtNumCel" placeholder="Numero de telefono" />
+          <input class="control" type="text" name="txtNombres" id="txtNombres" placeholder="Nombres" />
+          <label for="">Fecha de nacimiento</label>
+          <input class="control" type="date" name="txtFechaNaci" id="txtFechaNaci" placeholder="Fecha de nacimiento" />
+          <input class="control" disabled type="text" name="txtCedula" id="txtCedula" placeholder="Cedula" />
+          <input class="control" type="password" name="txtContrasenna" id="txtContrasenna" placeholder="Contraseña" />
+    
+    
+          <label class="labelComentario" for="label4">Mensaje de estado</label>
+          <p><input class="txtEstado" type="text" name="" id="" placeholder="Escriba el mensaje"></p>
+          <p>Recuerde que este estado sera publico en su perfil</p>
+    
+          <a href=""></a>
+          <input class="btnGuardar" type="button" value="Guardar Cambios" onclick="RemplazarDatosUsuarioLogueado()">
+        </div>
+    
       </section>
       <a class="enlaceLog" href="/Inicio/login.html">↩ Ir al Login</a>
     </form>

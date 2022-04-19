@@ -1,19 +1,16 @@
 function QuitarRefrescoDePantalla() {
   const form = document.getElementById("formConfig");
-  console.log(form);
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
   }
   )
 }
-QuitarRefrescoDePantalla();///aqui ejecuto una funcion al inicio
 
 function MostrarInfoDelUsuEnForm(){
   var nombreUsuario = localStorage.getItem("NombreDelLogueado");
   document.getElementById("labelNomUsuario").textContent = nombreUsuario;
 }
-MostrarInfoDelUsuEnForm();///aqui ejecuto una funcion al inicio
 
 function MostrarDatosUsuarioLogueado(){
   let objPersona = JSON.parse(localStorage.getItem("persona"));
@@ -46,9 +43,6 @@ function MostrarDatosUsuarioLogueado(){
 function RemplazarDatosUsuarioLogueado() {
   const form = document.getElementById("formConfig");
 
-  //form.addEventListener("submit", function (event) {
-  //event.preventDefault();
-
   let cedulaDelLocalStorage = localStorage.getItem("cedulaDelLogueado");
 
   var primerApe = document.getElementById("txtPrimerApellido").value;
@@ -60,7 +54,6 @@ function RemplazarDatosUsuarioLogueado() {
   let contrasennaConfig = document.getElementById("txtContrasenna").value;
 
   let objPersonaNueva = JSON.parse(localStorage.getItem("persona"));
-  //let listaOriginal = JSON.stringify(localStorage.getItem("persona"));
 
   objPersonaNueva.forEach(per => {
     if (per.CedulaRegistroUsu === cedulaDelLocalStorage) {
@@ -76,13 +69,13 @@ function RemplazarDatosUsuarioLogueado() {
 
         let stringRide = JSON.stringify(objPersonaNueva);
         localStorage.setItem("persona", stringRide);
-        //console.log(objPersonaNueva)
       }
     }
   });
+  alert("Se Editaron los datos correctamente");
+  window.location.reload();
 
 }
-MostrarDatosUsuarioLogueado();///aqui ejecuto una funcion al inicio
 
 function MensajeParaCerrarseccionUsu(){
   var respuesta = window.confirm("Esta sesión será finalizada: Deseas continuar"); 
@@ -97,9 +90,13 @@ function MensajeParaCerrarseccionUsu(){
 
 function IrDashboard(){
   window.location.href= "/DashBoard/Dashboard.html";
+  localStorage.removeItem("ViajeSeleccionado");
+  localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
 }
 function IrAgregarRide(){
   window.location.href= "/DashBoard/Viajes.html";
+  localStorage.removeItem("ViajeSeleccionado");
+  localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
 }
 function IrConfiguraciones(){
   window.location.href= "/DashBoard/Configuracion.html";
@@ -107,3 +104,6 @@ function IrConfiguraciones(){
 function IrMenuPrincipal(){
   MensajeParaCerrarseccionUsu();
 }
+MostrarDatosUsuarioLogueado();///aqui ejecuto una funcion al inicio
+MostrarInfoDelUsuEnForm();///aqui ejecuto una funcion al inicio
+QuitarRefrescoDePantalla();///aqui ejecuto una funcion al inicio

@@ -17,9 +17,9 @@ function ObjViaje(){
     form.reset();
 }
 function AlmacenarEnLocalStorage(objViajeDatos){
-    // || esto significa ,que si esta vacio o null "||" entonces es un array vacio
+    //|| esto significa ,que si esta vacio o null "||" entonces es un array vacio
     let datos = JSON.parse(localStorage.getItem("Ride")) || [];
-    datos.push(objViajeDatos); 
+    datos.push(objViajeDatos);
     let arrayJson = JSON.stringify(datos); 
     localStorage.setItem("Ride",arrayJson);
     
@@ -47,17 +47,21 @@ function ConvertirDatosformDataOBJ(transaFormData){
     }
 }
 function CargarDatosDeLosRides(){
-    const formViajes = document.getElementById("formViajes");
     let arrayRides = JSON.parse(localStorage.getItem("Ride"));
     let numViajeRef = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
     
-    let numViajeDeTxt = document.getElementById("txtNumViaje").value;
     console.log(numViajeRef);
+
+    if(numViajeRef === "" || numViajeRef === null ){
+      document.getElementById("btnEditarCambios").style.display = 'none';
+      document.getElementById("btnGuardarCambios").style.display = 'inline';
+
+    }else if (numViajeRef !== ""){
+      document.getElementById("btnEditarCambios").style.display = 'inline'; // botones
+      document.getElementById("btnGuardarCambios").style.display = 'none';
+    }
     //datos del Viaje que el usuario seleccionado
-    console.log(arrayRides.length);
-    try { 
-        //document.getElementById("btnGuardarCambios").style.visibility = "hidden";
-        //document.getElementById("btnEditarCambios").style.visibility = "visible";        
+    try {     
         arrayRides.forEach(rides => {
           if(rides.NumViaje == numViajeRef ){
             
@@ -82,11 +86,9 @@ function CargarDatosDeLosRides(){
     } catch (err) {
       //alert("entro al error");
     }
-    
 }
 function EditarDatosDelViajeSeleccionado(){
   const form = document.getElementById("formViajes");
-  console.log(form);
   var numViajeRef = document.getElementById("txtNumViaje").value;
   var salidaRef = document.getElementById("txtLugarSalida").value;
   var lugarDestinoRef = document.getElementById("txtLugarDestino").value;
@@ -95,8 +97,6 @@ function EditarDatosDelViajeSeleccionado(){
   var cantPasajerosRef = document.getElementById("SplitCantPasajeros").value;
   
   let arrayRides = JSON.parse(localStorage.getItem("Ride"));
-  console.log(arrayRides);
-
   let numViajeLocalStorage = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
   
   try {
@@ -112,8 +112,10 @@ function EditarDatosDelViajeSeleccionado(){
           editarRide.CantPasajeros =cantPasajerosRef;
   
           let arrayJson = JSON.stringify(arrayRides);
-          localStorage.setItem("Ride", arrayJson);            
+          localStorage.setItem("Ride", arrayJson);        
         }
+        window.alert("Ride Editado exitosamente");   
+        form.reset();
       }else{
       }
     });
@@ -141,6 +143,8 @@ function IrDashboard(){
 }
 function IrAgregarRide(){
   window.location.href= "/DashBoard/Viajes.html";
+  localStorage.removeItem("ViajeSeleccionado");
+  localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
 }
 function IrConfiguraciones(){
   window.location.href= "/DashBoard/Configuracion.html";
@@ -150,9 +154,9 @@ function IrMenuPrincipal(){
 }
 //***************************************** LLAMADO DE LOS METODOS**************************
   CargarDatosDeLosRides();
-  QuitarRefrescoDePantalla()
   MostrarInfoDelUsuEnForm();
-  EditarDatosDelViajeSeleccionado();
+  //EditarDatosDelViajeSeleccionado();
+  QuitarRefrescoDePantalla()
   //***************************************** LLAMADO DE LOS METODOS**************************
   
 

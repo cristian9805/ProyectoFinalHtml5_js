@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <title>Pagina de autenticacion</title>
     <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
@@ -18,6 +18,7 @@
                 <input class="control2" id="txtContrasenna" name="txtContrasenna" type="text" placeholder="Escriba su contraseña"><br>
                 <label class="label1" for="">Si no tienes cuenta</label>
                 <p><a class="enlaceRegistrousu" href="/Inicio/registro_usuario.html">Registrate aqui</a></p>
+                <label class="labelRef" id="labelRefDatos" for="">El Usuario No es valido</label>
                 <p><input class="btnIngresar" type="button" value="Ingresar" 
                     onclick="ValidarDatosLogin()"></p>  
             </section>
