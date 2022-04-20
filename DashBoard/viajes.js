@@ -152,6 +152,11 @@ function IrConfiguraciones(){
 function IrMenuPrincipal(){
   MensajeParaCerrarseccionUsu();
 }
+function IralLogin(){
+  window.location.href = "/Inicio/login.html"
+  //localStorage.removeItem("NombreDelLogueado");
+  //localStorage.removeItem("cedulaDelLogueado");
+}
 //***************************************** LLAMADO DE LOS METODOS**************************
   CargarDatosDeLosRides();
   MostrarInfoDelUsuEnForm();

@@ -61,7 +61,9 @@ function GuardarYMostrarRidesDelUsuEnLocalStorage(){
         
         btnEliminar.textContent = "Eliminar"// agrega el texto al boton
         btnEditar.textContent = "Editar"// agrega el texto al boton
-        btnEditar.style.width = '91px'
+        btnEditar.style.width = '85px'
+        btnEditar.setAttribute("class","btn-outline-success");// añade el atributo clase al boton en este caso botones de boostrap
+        btnEliminar.setAttribute("class","btn btn-danger");// añade el atributo clase al boton en este caso botones de boostrap
         newCellButtons.appendChild(btnEliminar); //agrega los botones a la celda
         newCellButtons.appendChild(btnEditar); //agrega los botones a la celda
             
@@ -138,6 +140,11 @@ function IrConfiguraciones(){
 }
 function IrMenuPrincipal(){
   MensajeParaCerrarseccionUsu();
+}
+function IralLogin(){
+  window.location.href = "/Inicio/login.html"
+  //localStorage.removeItem("NombreDelLogueado");
+  //localStorage.removeItem("cedulaDelLogueado");
 }
 GuardarYMostrarRidesDelUsuEnLocalStorage();// aqui agregue un metodo que se ejecute al inicio
 MostrarInfoDelUsuEnForm();// aqui agregue un metodo que se ejecute al inicio

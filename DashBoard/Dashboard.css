@@ -86,6 +86,20 @@ tr:hover td{
     border: none;
     border-radius: 10px;
 }
+.btnEnlacesLog{
+    position: relative;
+    font-size: large;
+    padding: 9px;
+    letter-spacing: 1px;
+    transition: 0.1s;
+    border: none;
+    border-radius: 10px;
+}
+.btnEnlacesLog:hover{
+    background: #616cff;
+    box-shadow: 0 0 10px #616cff, 0 0 40px #616cff, 0 0 80px #616cff;
+    font-weight: bold;
+}
 .btnEnlaces:hover{
     background: #08fa00;
     box-shadow: 0 0 10px #08fa00, 0 0 40px #08fa00, 0 0 80px #08fa00;

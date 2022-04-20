@@ -104,6 +104,11 @@ function IrConfiguraciones(){
 function IrMenuPrincipal(){
   MensajeParaCerrarseccionUsu();
 }
+function IralLogin(){
+  window.location.href = "/Inicio/login.html"
+  //localStorage.removeItem("NombreDelLogueado");
+  //localStorage.removeItem("cedulaDelLogueado");
+}
 MostrarDatosUsuarioLogueado();///aqui ejecuto una funcion al inicio
 MostrarInfoDelUsuEnForm();///aqui ejecuto una funcion al inicio
 QuitarRefrescoDePantalla();///aqui ejecuto una funcion al inicio

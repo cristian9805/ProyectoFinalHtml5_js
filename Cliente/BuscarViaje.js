@@ -20,6 +20,7 @@ function MostrarDatosDeLosRides(){
         let newCellButtons = newRoW.insertCell(3); //inserta la nueva celda en la pocision insertada en este caso en la pocicion 3
         let btnEliminar = document.createElement("button"); //crea el elemento del boton en la celda
         let btn = btnEliminar.textContent = "Solicitar"// agrega el texto al boton
+        btnEliminar.setAttribute("class","btn-success");
         newCellButtons.appendChild(btnEliminar);
                
         btnEliminar.setAttribute("id","btnEliminar");
@@ -91,6 +92,15 @@ function CapturarEvento(){
 
         labelOculto.style.display = 'none';
         labelOcultoInfo.style.display = 'none';
+
+        localStorage.removeItem("Busqueda NunViaje");
+        localStorage.removeItem("Busqueda salida");
+        localStorage.removeItem("Busqueda destino");
     });
 }
 CapturarEvento();
+function IralLogin(){
+    window.location.href = "/Inicio/login.html"
+    //localStorage.removeItem("NombreDelLogueado");
+    //localStorage.removeItem("cedulaDelLogueado");
+  }
