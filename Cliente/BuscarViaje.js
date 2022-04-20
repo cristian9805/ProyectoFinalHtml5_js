@@ -1,3 +1,5 @@
+var labelOcultoInfo = document.getElementById("labelOcultoinfo");
+var labelOculto = document.getElementById("labelOculto");
 function MostrarDatosDeLosRides(){    
     try{
         let arrayRides = JSON.parse(localStorage.getItem("Ride"));
@@ -37,3 +39,58 @@ function CambiarEstiloDeBotonReservarTable(){
 
 }
 MostrarDatosDeLosRides();
+
+function BuscarRide(){
+    var txtOrigen = document.getElementById("txtOrigen").value;
+    var txtDestino = document.getElementById("txtDestino").value;
+
+    var arrayRides= JSON.parse(localStorage.getItem("Ride"))
+    console.log(arrayRides);
+
+    var cont1 = 0;
+
+    arrayRides.forEach(rides =>{
+        if(txtOrigen === rides.LugarSalida && txtDestino === rides.LugarDestino){
+            var numviaje = rides.NumViaje;
+            var salida = rides.LugarSalida;
+            var destino = rides.LugarDestino;
+            localStorage.setItem("Busqueda NunViaje",numviaje);
+            localStorage.setItem("Busqueda salida",salida);
+            localStorage.setItem("Busqueda destino",destino);
+            cont1 = 1
+        }else{
+            
+        }
+
+    });
+    if(cont1 >= 1){
+        let viajenum = JSON.parse(localStorage.getItem("Busqueda NunViaje"));
+        let sali = JSON.parse(localStorage.getItem("Busqueda salida"));
+        let desti = JSON.parse(localStorage.getItem("Busqueda destino"));
+
+        labelOculto.style.display = 'inline';
+        labelOcultoInfo.style.display = 'inline';
+
+        labelOculto.textContent = "Viaje Disponible"
+        labelOculto.style.color = '#09ff00'
+        labelOculto.style.fontWeight = 'bold'
+        labelOcultoInfo.textContent = "Lugar de salida "+sali+" Hasta "+desti+" con el numero de viaje "+viajenum;
+
+    }else{
+        labelOculto.style.display = 'inline';
+        labelOcultoInfo.style.display = 'none';
+
+        labelOculto.textContent = "Este Viaje no se encuentra"
+        labelOculto.style.color = 'red'
+        labelOculto.style.fontWeight = 'bold'
+    }
+}
+function CapturarEvento(){
+    
+    addEventListener("keydown",(event)=>{
+
+        labelOculto.style.display = 'none';
+        labelOcultoInfo.style.display = 'none';
+    });
+}
+CapturarEvento();

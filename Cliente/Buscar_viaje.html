@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="Buscarviaje.css">
     <title>Buscar Ride</title>
     <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
@@ -20,17 +20,16 @@
                 <label class="labelgeneralesOyD" for="label3">Destino <input class="control" id="txtDestino" type="text" value="" placeholder="Lugar de destino"></label><br>
                 <input class="btnConsultar" 
                 id="btnBuscarRide" type="submit"
-                value="Buscar Ride" onclick="ObtenerDatosRideBusqueda()"></p>
-        
-                <p class="numReserva"><input class="controlNumReserva" type="text" value=""placeholder="# de viaje">
-                    <input class="btnReservar" type="submit" value="Solicitar"></p><br>
+                value="Buscar Ride" onclick="BuscarRide()"></p>
+                <label for="" id="labelOculto"></label><br><br>
+                <label for="" id="labelOcultoinfo"></label>
                 <br>
                 <br>
                 <br>   
             </legend>
         </section>
     </div>
-    <div class="container">
+    <div class="container2">
         <table id="jtablePrincipal" class="jtable">  
 			
             <tr class="Diseñocss">
