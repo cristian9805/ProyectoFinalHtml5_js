@@ -160,3 +160,12 @@ table{
     overflow: hidden;
     text-align: center;
 }
+.modal-header{
+    color: #036600;
+}
+.modal-body{
+    color: #000000;
+}
+.h5modalMenuP{
+    color: red;
+}

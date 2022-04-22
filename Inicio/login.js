@@ -13,30 +13,40 @@ function ValidarDatosLogin(){
     var cedulaLog = document.getElementById("txtCedula").value;
     var contrasennaLog = document.getElementById("txtContrasenna").value;
     
+    try{
 
-    if(objPersona === 0 ||objPersona === null ||objPersona === undefined ){
-        window.alert("Datos Incorrectos, Registrese primero")
-    }else{
-        objPersona.forEach(per => {
-            if(per.CedulaRegistroUsu === cedulaLog && per.Contrasenna1 === contrasennaLog){           
-                console.log("La cedula es del usuario: ", per.Nombres);
-                alert("Bienvenido "+ per.Nombres);
-                localStorage.setItem("NombreDelLogueado",per.Nombres);
-                localStorage.setItem("cedulaDelLogueado",per.CedulaRegistroUsu);
-                window.location.href= "/DashBoard/Dashboard.html";     
-                cont = 1;
-            }else{
-                form.reset();
-            }
-        });
-        if(cont === 1){
-            //no necitito validacion , ta imprimo el nombre arriba con un alert
-        }else{
-            // o sea si no encontro ningun usuario , haga esto
+        if(objPersona === 0 ||objPersona === null ||objPersona === undefined ){
             label.style.display = 'inline';
             label.style.color = 'red';
             label.style.fontWeight = 'bold';
+        }else{
+            objPersona.forEach(per => {
+                if(per.CedulaRegistroUsu === cedulaLog && per.Contrasenna1 === contrasennaLog){           
+                    console.log("La cedula es del usuario: ", per.Nombres);
+                    alert("Bienvenido "+ per.Nombres);
+                    localStorage.setItem("NombreDelLogueado",per.Nombres);
+                    localStorage.setItem("cedulaDelLogueado",per.CedulaRegistroUsu);
+                    window.location.href= "/DashBoard/Dashboard.html";     
+                    cont = 1;
+                }else{
+                    form.reset();
+                }
+            });
+            if(cont === 1 ){
+                //no necitito validacion , ta imprimo el nombre arriba con un alert
+            }else{
+                // o sea si no encontro ningun usuario , haga esto
+                label.style.display = 'inline';
+                label.style.color = 'red';
+                label.style.fontWeight = 'bold';
+            }
         }
+
+    }catch(error){
+        alert("entro aqui al catch")
+        label.style.display = 'inline';
+        label.style.color = 'red';
+        label.style.fontWeight = 'bold';
     }
 }
 function CapturarEventoKey(){

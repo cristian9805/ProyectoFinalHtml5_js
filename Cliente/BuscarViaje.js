@@ -65,9 +65,9 @@ function BuscarRide(){
 
     });
     if(cont1 >= 1){
-        let viajenum = JSON.parse(localStorage.getItem("Busqueda NunViaje"));
-        let sali = JSON.parse(localStorage.getItem("Busqueda salida"));
-        let desti = JSON.parse(localStorage.getItem("Busqueda destino"));
+        let viajenum = localStorage.getItem("Busqueda NunViaje");
+        let sali = localStorage.getItem("Busqueda salida");
+        let desti = localStorage.getItem("Busqueda destino");
 
         labelOculto.style.display = 'inline';
         labelOcultoInfo.style.display = 'inline';
@@ -101,6 +101,4 @@ function CapturarEvento(){
 CapturarEvento();
 function IralLogin(){
     window.location.href = "/Inicio/login.html"
-    //localStorage.removeItem("NombreDelLogueado");
-    //localStorage.removeItem("cedulaDelLogueado");
   }

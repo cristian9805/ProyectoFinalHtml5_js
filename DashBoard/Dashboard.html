@@ -15,27 +15,8 @@
 					<input class="btnEnlaces" type="button" value="Dashboard" onclick="IrDashboard()">
 					<input class="btnEnlaces" type="button" value="Agregar Ride" onclick="IrAgregarRide()">
 					<input class="btnEnlaces" type="button" value="Configuraciones" onclick="IrConfiguraciones()">
-					<input class="btnEnlacesPrincipal" type="button" value="Menu Principal" data-bs-toggle="modal" data-bs-target="#btn1"><label
+					<input class="btnEnlacesPrincipal" type="button" value="Menu Principal" data-bs-toggle="modal" data-bs-target="#btn1MenuPrincipal"><label
 					class="labelUsuario" for="label">Usuario: <label for="labelNomUsuario" id="labelNomUsuario"></label></label>
-					<!-- Modal Menu principal-->
-					<div class="modal fade" id="btn1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Pagina Principal</h5>
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>
-								<div class="modal-body">
-									<h4>Estas seguro que desea regresar a la pagina principal, 
-										Esta sesion se cerrara</h4>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancelar</button>
-									<button type="button" class="btn btn-outline-primary" onclick="IrMenuPrincipal()">Ir a pagina principal</button>
-								</div>
-							</div>
-						</div>
-					</div>
 				</header>
 				<section class="form_dashboard">
 					<h2>DashBoard</h2>
@@ -55,20 +36,42 @@
 				</section>
 				<header class="irLogin">
 					<button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#btn1">Ir al login</button>
-					<!-- Modal -->
+					<!-- ModalLogin -->
 					<div class="modal fade" id="btn1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
+						<div class="modal-dialog modal-dialog-centered">
 							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Cerrar sesion</h5>
+								<div class="modal-header myModal-header">
+									<h3 class="modal-title" id="exampleModalLabel">Cerrar sesion</h3>
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								</div>
 								<div class="modal-body">
-									<h4>Estas seguro que deseas cerrar sesion</h4>
+									<h5>¿Estas seguro que desea cerrar sesion?</h5>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancelar</button>
-									<button type="button" class="btn btn-outline-dark" onclick="IralLogin()">Cerrar sesion</button>
+									<button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Cancelar</button>
+									<button type="button" class="btn btn-danger" onclick="IralLogin()">Cerrar sesion</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- ModalMenuPrincipal -->
+					<div class="modal fade" id="btn1MenuPrincipal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header myModal-header">
+									<h3 class="modal-title" id="exampleModalLabel">Menu Pricipal</h3>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<h5 >¿Estas seguro que desea regresar al menu principal?
+									</h5>
+									<h5 class="h5modalMenuP">
+										Esta sesion sera finalizada
+									</h5>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Cancelar</button>
+									<button type="button" class="btn btn-danger" onclick="IrMenuPrincipal()">Ir al menu Principal</button>
 								</div>
 							</div>
 						</div>

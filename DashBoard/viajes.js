@@ -126,37 +126,32 @@ function EditarDatosDelViajeSeleccionado(){
 }
 
 function MensajeParaCerrarseccionUsu(){
-  var respuesta = window.confirm("Esta sesión será finalizada: Deseas continuar"); 
-  if(respuesta === true){
-    localStorage.removeItem("cedulaDelLogueado");
-    localStorage.removeItem("NombreDelLogueado");
-    window.location.href= "/Cliente/Buscar_viaje.html";
-  }else{
-    window.location.reload();
-  }
+  localStorage.removeItem("cedulaDelLogueado");
+  localStorage.removeItem("NombreDelLogueado");
+  window.location.href= "/Cliente/Buscar_viaje.html";
 }
 
 function IrDashboard(){
-  window.location.href= "/DashBoard/Dashboard.html";
-  localStorage.removeItem("ViajeSeleccionado");
-  localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
+window.location.href= "/DashBoard/Dashboard.html";
+localStorage.removeItem("ViajeSeleccionado");
+localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
 }
 function IrAgregarRide(){
-  window.location.href= "/DashBoard/Viajes.html";
-  localStorage.removeItem("ViajeSeleccionado");
-  localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
+window.location.href= "/DashBoard/Viajes.html";
+localStorage.removeItem("ViajeSeleccionado");
+localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
 }
 function IrConfiguraciones(){
-  window.location.href= "/DashBoard/Configuracion.html";
+window.location.href= "/DashBoard/Configuracion.html";
 }
 function IrMenuPrincipal(){
-  MensajeParaCerrarseccionUsu();
+MensajeParaCerrarseccionUsu();
 }
 function IralLogin(){
-  window.location.href = "/Inicio/login.html"
-  //localStorage.removeItem("NombreDelLogueado");
-  //localStorage.removeItem("cedulaDelLogueado");
+window.location.href = "/Inicio/login.html"
 }
+
+
 //***************************************** LLAMADO DE LOS METODOS**************************
   CargarDatosDeLosRides();
   MostrarInfoDelUsuEnForm();

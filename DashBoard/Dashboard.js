@@ -114,16 +114,10 @@ function GuardarYMostrarRidesDelUsuEnLocalStorage(){
 }
 
 function MensajeParaCerrarseccionUsu(){
-  var respuesta = window.confirm("Esta sesión será finalizada: Deseas continuar"); 
-  if(respuesta === true){
     localStorage.removeItem("cedulaDelLogueado");
     localStorage.removeItem("NombreDelLogueado");
     window.location.href= "/Cliente/Buscar_viaje.html";
-  }else{
-    window.location.reload();
-  }
 }
-
 
 function IrDashboard(){
   window.location.href= "/DashBoard/Dashboard.html";
@@ -143,8 +137,6 @@ function IrMenuPrincipal(){
 }
 function IralLogin(){
   window.location.href = "/Inicio/login.html"
-  //localStorage.removeItem("NombreDelLogueado");
-  //localStorage.removeItem("cedulaDelLogueado");
 }
 GuardarYMostrarRidesDelUsuEnLocalStorage();// aqui agregue un metodo que se ejecute al inicio
 MostrarInfoDelUsuEnForm();// aqui agregue un metodo que se ejecute al inicio

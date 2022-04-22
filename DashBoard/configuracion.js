@@ -88,26 +88,30 @@ function MensajeParaCerrarseccionUsu(){
   }
 }
 
+function MensajeParaCerrarseccionUsu(){
+  localStorage.removeItem("cedulaDelLogueado");
+  localStorage.removeItem("NombreDelLogueado");
+  window.location.href= "/Cliente/Buscar_viaje.html";
+}
+
 function IrDashboard(){
-  window.location.href= "/DashBoard/Dashboard.html";
-  localStorage.removeItem("ViajeSeleccionado");
-  localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
+window.location.href= "/DashBoard/Dashboard.html";
+localStorage.removeItem("ViajeSeleccionado");
+localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
 }
 function IrAgregarRide(){
-  window.location.href= "/DashBoard/Viajes.html";
-  localStorage.removeItem("ViajeSeleccionado");
-  localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
+window.location.href= "/DashBoard/Viajes.html";
+localStorage.removeItem("ViajeSeleccionado");
+localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
 }
 function IrConfiguraciones(){
-  window.location.href= "/DashBoard/Configuracion.html";
+window.location.href= "/DashBoard/Configuracion.html";
 }
 function IrMenuPrincipal(){
-  MensajeParaCerrarseccionUsu();
+MensajeParaCerrarseccionUsu();
 }
 function IralLogin(){
-  window.location.href = "/Inicio/login.html"
-  //localStorage.removeItem("NombreDelLogueado");
-  //localStorage.removeItem("cedulaDelLogueado");
+window.location.href = "/Inicio/login.html"
 }
 MostrarDatosUsuarioLogueado();///aqui ejecuto una funcion al inicio
 MostrarInfoDelUsuEnForm();///aqui ejecuto una funcion al inicio

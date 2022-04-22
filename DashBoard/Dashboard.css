@@ -151,6 +151,15 @@ h2{
     margin: 0 auto;
     overflow: hidden;
 }
+.modal-header{
+    color: #036600;
+}
+.modal-body{
+    color: #000000;
+}
+.h5modalMenuP{
+    color: red;
+}
 @media screen and (max-width: 800px){
     .container{
         width: 100%;
