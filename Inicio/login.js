@@ -1,7 +1,7 @@
 var label = document.getElementById("labelRefDatos");
 label.style.display = 'none'
 
-
+var nombreLogueado; 
 
 function ValidarDatosLogin(){
     var form = document.getElementById("FormularioLogin"); 
@@ -23,10 +23,16 @@ function ValidarDatosLogin(){
             objPersona.forEach(per => {
                 if(per.CedulaRegistroUsu === cedulaLog && per.Contrasenna1 === contrasennaLog){           
                     console.log("La cedula es del usuario: ", per.Nombres);
-                    alert("Bienvenido "+ per.Nombres);
+
                     localStorage.setItem("NombreDelLogueado",per.Nombres);
-                    localStorage.setItem("cedulaDelLogueado",per.CedulaRegistroUsu);
-                    window.location.href= "/DashBoard/Dashboard.html";     
+                    localStorage.setItem("cedulaDelLogueado",per.CedulaRegistroUsu);    
+                    
+                    var myModal = new bootstrap.Modal(document.getElementById("myModal"))
+                    nombreLogueado = per.Nombres;
+                    var contenidoLabel = document.getElementById("labelNombreUsu");
+                    contenidoLabel.textContent ="Hola Bienvenido "+ nombreLogueado;
+                    myModal.show(); /// activa el modal que nombre arriba
+
                     cont = 1;
                 }else{
                     form.reset();
@@ -55,4 +61,19 @@ function CapturarEventoKey(){
         label.style.display = 'none';
     });
 }
-CapturarEventoKey();
+CapturarEventoKey();// se ejucuta una accion al inicio del form
+
+function Continuar(){
+    window.location.href= "/DashBoard/Dashboard.html"; 
+}
+function Detener(){
+    window.location.reload(); 
+}
+function MensajeParaCerrarseccionUsu(){
+    localStorage.removeItem("cedulaDelLogueado");
+    localStorage.removeItem("NombreDelLogueado");
+    window.location.href= "/Cliente/Buscar_viaje.html";
+}
+function IrMenuPrincipal(){
+  MensajeParaCerrarseccionUsu();
+}
