@@ -114,8 +114,9 @@ function EditarDatosDelViajeSeleccionado(){
           let arrayJson = JSON.stringify(arrayRides);
           localStorage.setItem("Ride", arrayJson);        
         }
-        window.alert("Ride Editado exitosamente");   
-        form.reset();
+        window.alert("Ride Editado exitosamente"); 
+        localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
+        window.location.reload();
       }else{
       }
     });

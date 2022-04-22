@@ -1,3 +1,4 @@
+var btnEli = document.getElementById("btnElimModal");
 function MostrarInfoDelUsuEnForm(){
   var nombreUsuario = localStorage.getItem("NombreDelLogueado");
   document.getElementById("labelNomUsuario").textContent = nombreUsuario;
@@ -64,40 +65,31 @@ function GuardarYMostrarRidesDelUsuEnLocalStorage(){
         btnEditar.style.width = '85px'
         btnEditar.setAttribute("class","btn-warning");// añade el atributo clase al boton en este caso botones de boostrap
         btnEliminar.setAttribute("class","btn btn-danger");// añade el atributo clase al boton en este caso botones de boostrap
+        btnEliminar.setAttribute("onclick","EliminarRide()");
+
         newCellButtons.appendChild(btnEliminar); //agrega los botones a la celda
         newCellButtons.appendChild(btnEditar); //agrega los botones a la celda
+
             
           //estos eventos extraen el numero de vieje para usuarlo para extraer los datos de ese mismo viaje
           btnEliminar.addEventListener("click", (event)=>{
-            var respuesta = window.confirm("Estas seguro que desea eliminar este Ride"); 
-            if(respuesta === true){
-              let obj = event.target.parentNode.parentNode
-              var numViajeRef = obj.getElementsByTagName("td")[0].textContent;
-              localStorage.setItem("NumDeViajeSeleccionadoEnTabla",numViajeRef);
-  
-              let numViajeDeLocalStorage = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
-              let arrayRides = JSON.parse(localStorage.getItem("Ride"));        
-              //Obtiene el index Del Array
-              let indexDelArray = arrayRides.findIndex(ride => ride.NumViaje === numViajeDeLocalStorage);
-              arrayRides.splice(indexDelArray,1)// el ,1 significa que solo elimine un elemento
-              //guardar el nuevo array para guardarlo en el local storage
-              let newArray = JSON.stringify(arrayRides); // lo converto a string para poder remplazarlo por el otro
-              localStorage.setItem("Ride",newArray); // aqui lo remplazo      
-              location.reload("/DashBoard/Dashboard.html");
-            }else{
-              window.location.reload();
-            }
+            let obj = event.target.parentNode.parentNode
+            var numViajeRef = obj.getElementsByTagName("td")[0].textContent;
+            localStorage.setItem("NumDeViajeSeleccionadoEnTabla",numViajeRef);
             
-          });
-        
+            var myModal = new bootstrap.Modal(document.getElementById("myModal"));//llamar al modal y pregunbtar si desea eliminar el ride
+            myModal.show(); 
+
+          }); 
+          
+          
           btnEditar.addEventListener("click", (event)=>{
             let obj = event.target.parentNode.parentNode
             var numViajeRef = obj.getElementsByTagName("td")[0].textContent;
             localStorage.setItem("NumDeViajeSeleccionadoEnTabla",numViajeRef);
             window.location.href = "/DashBoard/Viajes.html";
           });
-    } 
-        
+    }  
   });
     
     let arrayString = JSON.stringify(arrayRidesUsuarioLogueado);// convierto de array que es originalmente a string
@@ -111,6 +103,20 @@ function GuardarYMostrarRidesDelUsuEnLocalStorage(){
    
  }
     
+}
+function EliminarRide(){
+  btnEli.addEventListener("click",(event)=>{ 
+    alert("aquiiii");
+    let numViajeDeLocalStorage = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
+    let arrayRides = JSON.parse(localStorage.getItem("Ride"));        
+    //Obtiene el index Del Array
+    let indexDelArray = arrayRides.findIndex(ride => ride.NumViaje === numViajeDeLocalStorage);
+    arrayRides.splice(indexDelArray,1)// el ,1 significa que solo elimine un elemento
+    //guardar el nuevo array para guardarlo en el local storage
+    let newArray = JSON.stringify(arrayRides); // lo converto a string para poder remplazarlo por el otro
+    localStorage.setItem("Ride",newArray); // aqui lo remplazo      
+    location.reload("/DashBoard/Dashboard.html");
+  });   
 }
 
 function MensajeParaCerrarseccionUsu(){
