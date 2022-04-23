@@ -23,8 +23,8 @@ function AlmacenarEnLocalStorage(objViajeDatos){
     let arrayJson = JSON.stringify(datos); 
     localStorage.setItem("Ride",arrayJson);
     
-    window.alert("Ride guardado exitosamente");
-    
+    var myModal = new bootstrap.Modal(document.getElementById("myModalGuardar"));//llamar al modal y pregunbtar si desea eliminar el ride
+    myModal.show();
 }
 function ConvertirDatosformDataOBJ(transaFormData){
 
@@ -114,9 +114,8 @@ function EditarDatosDelViajeSeleccionado(){
           let arrayJson = JSON.stringify(arrayRides);
           localStorage.setItem("Ride", arrayJson);        
         }
-        window.alert("Ride Editado exitosamente"); 
-        localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
-        window.location.reload();
+        var myModal = new bootstrap.Modal(document.getElementById("myModalEditar"));//llamar al modal y pregunbtar si desea eliminar el ride
+        myModal.show();
       }else{
       }
     });
@@ -124,6 +123,14 @@ function EditarDatosDelViajeSeleccionado(){
   } catch (err) {
   
   }
+}
+function ContinuarGuardadoRide(){
+  window.location.reload(); 
+}
+
+function Continuar(){
+  localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
+  window.location.reload(); 
 }
 
 function MensajeParaCerrarseccionUsu(){

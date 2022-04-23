@@ -14,9 +14,11 @@
             <label class="h5label">Welcome to SoulTravel.com</label>
             <!--<label class="labelUsuario" id="label">Usuario: <label id="labelNomUsuario"></label></label>-->
             <p><label for="label1">Buscar un Ride</label></p>
-            <legend>        
-                <label class="labelgeneralesOyD" for="label2">Origen <input class="control" id="txtOrigen" type="text" value="" placeholder="ubicacion actual u otra"></label><br>
-                <label class="labelgeneralesOyD" for="label3">Destino <input class="control" id="txtDestino" type="text" value="" placeholder="Lugar de destino"></label><br>
+            <legend>
+                <div class="divOrigenDestino">
+                    <label class="labelgeneralesOyD" for="label2">Origen <input class="control" id="txtOrigen" type="text" value="" placeholder="ubicacion actual u otra"></label><br>
+                    <label class="labelgeneralesOyD" for="label3">Destino <input class="control" id="txtDestino" type="text" value="" placeholder="Lugar de destino"></label><br>    
+                </div>        
                 <input class="btnConsultar" 
                 id="btnBuscarRide" type="submit"
                 value="Buscar Ride" onclick="BuscarRide()"></p>

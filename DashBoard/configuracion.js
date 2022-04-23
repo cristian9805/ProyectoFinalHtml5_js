@@ -46,12 +46,12 @@ function RemplazarDatosUsuarioLogueado() {
   let cedulaDelLocalStorage = localStorage.getItem("cedulaDelLogueado");
 
   var primerApe = document.getElementById("txtPrimerApellido").value;
-  let segApe = document.getElementById("txtSegundoApeliido").value;
-  let numCel = document.getElementById("txtNumCel").value;
-  let nombres = document.getElementById("txtNombres").value;
-  let fechaNaci = document.getElementById("txtFechaNaci").value;
-  let cedulaCongig = document.getElementById("txtCedula").value;
-  let contrasennaConfig = document.getElementById("txtContrasenna").value;
+  var segApe = document.getElementById("txtSegundoApeliido").value;
+  var numCel = document.getElementById("txtNumCel").value;
+  var nombres = document.getElementById("txtNombres").value;
+  var fechaNaci = document.getElementById("txtFechaNaci").value;
+  var cedulaCongig = document.getElementById("txtCedula").value;
+  var contrasennaConfig = document.getElementById("txtContrasenna").value;
 
   let objPersonaNueva = JSON.parse(localStorage.getItem("persona"));
 
@@ -72,9 +72,8 @@ function RemplazarDatosUsuarioLogueado() {
       }
     }
   });
-  alert("Se Editaron los datos correctamente");
-  window.location.reload();
-
+  var myModal = new bootstrap.Modal(document.getElementById("myModalEditarInfoUsuario"));//llamar al modal y pregunbtar si desea eliminar el ride
+  myModal.show(); 
 }
 
 function MensajeParaCerrarseccionUsu(){
@@ -86,6 +85,14 @@ function MensajeParaCerrarseccionUsu(){
   }else{
     window.location.reload();
   }
+}
+function Continuar(){
+  let nombreDelCampotxt = document.getElementById("txtNombres").value;//obtengo el nombre del campo txt
+  localStorage.setItem("NombreDelLogueado",nombreDelCampotxt); //guardo el nombre del campo txt en el local storage
+  var nomLocalStorageDelLogueado = localStorage.getItem("NombreDelLogueado");//obtengo el nuevo valor del nombre en el local storage
+  document.getElementById("labelNomUsuario").textContent = nomLocalStorageDelLogueado; //imprimo en el label el nombre del usuario
+
+  window.location.reload();
 }
 
 function MensajeParaCerrarseccionUsu(){
@@ -99,6 +106,7 @@ window.location.href= "/DashBoard/Dashboard.html";
 localStorage.removeItem("ViajeSeleccionado");
 localStorage.removeItem("NumDeViajeSeleccionadoEnTabla");
 }
+
 function IrAgregarRide(){
 window.location.href= "/DashBoard/Viajes.html";
 localStorage.removeItem("ViajeSeleccionado");

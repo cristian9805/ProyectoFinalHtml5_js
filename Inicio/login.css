@@ -99,3 +99,9 @@ h4{
     overflow: hidden;
     text-align: center;
 }
+.container svg{
+    width: 30%;
+    height: 30%;
+    color: #418c3a;
+    text-align: center;
+}

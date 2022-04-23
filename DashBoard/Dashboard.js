@@ -79,7 +79,6 @@ function GuardarYMostrarRidesDelUsuEnLocalStorage(){
             
             var myModal = new bootstrap.Modal(document.getElementById("myModal"));//llamar al modal y pregunbtar si desea eliminar el ride
             myModal.show(); 
-
           }); 
           
           
@@ -105,8 +104,8 @@ function GuardarYMostrarRidesDelUsuEnLocalStorage(){
     
 }
 function EliminarRide(){
+  //capturar el evento del boton de eliminar del MODAL
   btnEli.addEventListener("click",(event)=>{ 
-    alert("aquiiii");
     let numViajeDeLocalStorage = localStorage.getItem("NumDeViajeSeleccionadoEnTabla");
     let arrayRides = JSON.parse(localStorage.getItem("Ride"));        
     //Obtiene el index Del Array
