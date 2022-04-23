@@ -11,19 +11,24 @@
 <body>
     <div class="container">
         <form class="FormularioLogin" id="FormularioLogin"><br><br><br> 
-                <img class="imgLogin" src="/Imagenes/login_gov_icon_146024.png" alt=""> <br><br><br><br><br><br>     
-                <h4>Inicio de seccion</h4><br>
-                
-                <input class="form-control" id="txtCedula" name="txtCedula" type="text" placeholder="Escriba su Cedula"><br>
-                
-                <input class="form-control" id="txtContrasenna" name="txtContrasenna" type="password" placeholder="Escriba su contraseña" aria-describedby="passwordHelpBlock"><br>
-                <label class="labelRef" id="labelRefDatos" for="">Cedula o Contraseña incorrectos</label><br>
-                <label class="label1" for="">Si no tienes cuenta</label>
-                <p><a class="enlaceRegistrousu" href="/Inicio/registro_usuario.html">Registrate aqui</a></p>
-                <p><input class="btnIngresar" type="button" value="Ingresar"
-                  onclick="ValidarDatosLogin()" ></p> 
-                <button class="btn btn-outline-dark" type="button" onclick="IrMenuPrincipal()"> Ir al menu principal</button>  
-                <!-- ModalBienvenidaLogin -->
+            <div class="log">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                  </svg><br><br><br>   
+                    <h4 class="inicioSesionletras">Inicio de seccion</h4><br>
+                    
+                    <input class="form-control" id="txtCedula" name="txtCedula" type="text" placeholder="Escriba su Cedula"><br>
+                    
+                    <input class="form-control" id="txtContrasenna" name="txtContrasenna" type="password" placeholder="Escriba su contraseña" aria-describedby="passwordHelpBlock"><br>
+                    <label class="labelRef" id="labelRefDatos" for="">Cedula o Contraseña incorrectos</label><br>
+                    <label class="label1" for="">Si no tienes cuenta</label>
+                    <p><a class="enlaceRegistrousu" href="/Inicio/registro_usuario.html">Registrate aqui</a></p>
+                    <p><input class="btnIngresar" type="button" value="Ingresar"
+                      onclick="ValidarDatosLogin()" ></p> 
+                    <button class="btn btn-outline-dark" type="button" onclick="IrMenuPrincipal()"> Ir al menu principal</button>      
+            </div>
+            <!-- ModalBienvenidaLogin -->
 					<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered">
 							<div class="modal-content">

@@ -11,10 +11,11 @@ body{
     text-decoration:underline ;
     color: black;
 }
-h4{
+.inicioSesionletras{
   font-size: 35px;
   color: rgb(0, 0, 0);  
   font-family:cursive;
+  font-weight: bolder;
 }
 .control1{
     width: 80%;
@@ -104,4 +105,8 @@ h4{
     height: 30%;
     color: #418c3a;
     text-align: center;
+}
+.log svg{
+    width: 30%;
+    color: rgb(65, 112, 254);
 }
