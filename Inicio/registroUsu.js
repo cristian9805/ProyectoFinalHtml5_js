@@ -17,10 +17,9 @@ function AlmacenarEnLocalStorage(objPersonaDatos){
   datos.push(objPersonaDatos); 
   let arrayJson = JSON.stringify(datos); 
   localStorage.setItem("persona",arrayJson);
-  
-  window.alert("Usted se ah registrdo exitosamente");
-  window.location.href= "/Inicio/login.html";
-  
+
+  var myModal = new bootstrap.Modal(document.getElementById("myModalGuardarUsu"));//llamar al modal y pregunbtar si desea eliminar el ride
+  myModal.show();
 }
 
 function ConvertirDatosformDataOBJ(transaFormData){
@@ -77,6 +76,9 @@ function GuardarDatosRegistroUsu(){
     return persona;
     
   };
+function Continuar(){
+  window.location.href= "/Inicio/login.html";
+}
 
 /*function ObtenerDaatosLocalStorage (){
   let exist = true;
@@ -91,5 +93,5 @@ function GuardarDatosRegistroUsu(){
     console.log(exist);
   }
   return exist;
-}
-ObtenerDaatosLocalStorage();*/
+}*/
+
