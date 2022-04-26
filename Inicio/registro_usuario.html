@@ -18,9 +18,12 @@
           <input  class="control" type="text" name="txtNombres" id="txtNombres" placeholder="Nombres"/>
           <label for="">Fecha de nacimiento</label>
           <input  class="control" type="date" name="dateFechaNaci" id="dateFechaNaci" placeholder="Fecha de nacimiento"/>
-          <input  class="control" type="text" name="txtCedulaRegistroUsu" id="txtCedulaRegistroUsu" placeholder="Cedula"/>
-          <input  class="control" type="password" name="txtContrasenna1" id="txtContrasenna1" placeholder="Contraseña"/>
-          <input  class="control" type="password" name="txtContrasenna2" id="txtContrasenna2" placeholder="Repita la contraseña"/>
+          <input  class="control" type="text" name="txtCedulaRegistroUsu" id="txtCedulaRegistroUsu" placeholder="Cedula"/><br>
+          <label style="display: none;" for="" id="labelCedulaError">Este numero de cedula ya esta registrado</label>
+          <input  class="control" type="password" name="txtContrasenna1" id="txtContrasenna1" placeholder="Contraseña"/><br>
+          <label style="display: none;" for="" id="labelContraseñaError">Las contraseñas no coinciden</label>
+          <input  class="control" type="password" name="txtContrasenna2" id="txtContrasenna2" placeholder="Repita la contraseña"/><br>
+          <label style="display: none;" for="" id="labelContraseñaError2">Las contraseñas no coinciden</label>
           <p><label for="label1">¿Ya eres usuario?</label></p>
           <p><a class="enlaceNuevoUsu" href="/Inicio/login.html">Inicia sección</a></p>
           <p><input class="btnRegistrar" type="button" value="Registrar" onclick="ObjPersona()"

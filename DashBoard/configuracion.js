@@ -69,6 +69,7 @@ function RemplazarDatosUsuarioLogueado() {
 
         let stringRide = JSON.stringify(objPersonaNueva);
         localStorage.setItem("persona", stringRide);
+        localStorage.setItem("cedulaDelLogueado",cedulaCongig);
       }
     }
   });

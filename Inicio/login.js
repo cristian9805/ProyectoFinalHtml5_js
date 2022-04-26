@@ -49,7 +49,6 @@ function ValidarDatosLogin(){
         }
 
     }catch(error){
-        alert("entro aqui al catch")
         label.style.display = 'inline';
         label.style.color = 'red';
         label.style.fontWeight = 'bold';
