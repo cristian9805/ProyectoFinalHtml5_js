@@ -19,7 +19,7 @@ function MostrarDatosDeLosRides(){
 
         let newCellButtons = newRoW.insertCell(3); //inserta la nueva celda en la pocision insertada en este caso en la pocicion 3
         let btnEliminar = document.createElement("button"); //crea el elemento del boton en la celda
-        let btn = btnEliminar.textContent = "Solicitar"// agrega el texto al boton
+        let btn = btnEliminar.textContent = "Apartar Viaje"// agrega el texto al boton
         btnEliminar.setAttribute("class","btn-success");
         newCellButtons.appendChild(btnEliminar);
                
