@@ -5,7 +5,7 @@ function ObjPersona(){
   let transaFormData = new FormData(form);
   let objPersonaDatos = ConvertirDatosformDataOBJ(transaFormData)
   if(objPersonaDatos === null || objPersonaDatos === undefined){
-    alert("NO SE MATRICULO")
+
   }else{
     AlmacenarEnLocalStorage(objPersonaDatos)
     form.reset();

@@ -49,41 +49,44 @@ function BuscarRide(){
     console.log(arrayRides);
 
     var cont1 = 0;
-
-    arrayRides.forEach(rides =>{
-        if(txtOrigen === rides.LugarSalida && txtDestino === rides.LugarDestino){
-            var numviaje = rides.NumViaje;
-            var salida = rides.LugarSalida;
-            var destino = rides.LugarDestino;
-            localStorage.setItem("Busqueda NunViaje",numviaje);
-            localStorage.setItem("Busqueda salida",salida);
-            localStorage.setItem("Busqueda destino",destino);
-            cont1 = 1
+    try{
+        arrayRides.forEach(rides =>{
+            if(txtOrigen === rides.LugarSalida && txtDestino === rides.LugarDestino){
+                var numviaje = rides.NumViaje;
+                var salida = rides.LugarSalida;
+                var destino = rides.LugarDestino;
+                localStorage.setItem("Busqueda NunViaje",numviaje);
+                localStorage.setItem("Busqueda salida",salida);
+                localStorage.setItem("Busqueda destino",destino);
+                cont1 = 1
+            }else{
+                
+            }
+    
+        });
+        if(cont1 >= 1){
+            let viajenum = localStorage.getItem("Busqueda NunViaje");
+            let sali = localStorage.getItem("Busqueda salida");
+            let desti = localStorage.getItem("Busqueda destino");
+    
+            labelOculto.style.display = 'inline';
+            labelOcultoInfo.style.display = 'inline';
+    
+            labelOculto.textContent = "Viaje Disponible"
+            labelOculto.style.color = '#09ff00'
+            labelOculto.style.fontWeight = 'bold'
+            labelOcultoInfo.textContent = "Lugar de salida "+sali+" Hasta "+desti+" con el numero de viaje "+viajenum;
+    
         }else{
-            
+            labelOculto.style.display = 'inline';
+            labelOcultoInfo.style.display = 'none';
+    
+            labelOculto.textContent = "Este Viaje no se encuentra"
+            labelOculto.style.color = 'red'
+            labelOculto.style.fontWeight = 'bold'
         }
+    }catch(error){
 
-    });
-    if(cont1 >= 1){
-        let viajenum = localStorage.getItem("Busqueda NunViaje");
-        let sali = localStorage.getItem("Busqueda salida");
-        let desti = localStorage.getItem("Busqueda destino");
-
-        labelOculto.style.display = 'inline';
-        labelOcultoInfo.style.display = 'inline';
-
-        labelOculto.textContent = "Viaje Disponible"
-        labelOculto.style.color = '#09ff00'
-        labelOculto.style.fontWeight = 'bold'
-        labelOcultoInfo.textContent = "Lugar de salida "+sali+" Hasta "+desti+" con el numero de viaje "+viajenum;
-
-    }else{
-        labelOculto.style.display = 'inline';
-        labelOcultoInfo.style.display = 'none';
-
-        labelOculto.textContent = "Este Viaje no se encuentra"
-        labelOculto.style.color = 'red'
-        labelOculto.style.fontWeight = 'bold'
     }
 }
 function CapturarEvento(){
