@@ -106,12 +106,6 @@ function ConvertirDatosformDataOBJ(transaFormData){
          contadorCedula_NO = true;
        }
     });
-
-    var contadorContrasena_NO;
-    var contadorContrasena_SI;
-    
-    var contadorCedula_SI;
-    var contadorCedula_NO;
   
     if(contadorContrasena_NO === false && contadorCedula_NO === true 
       || contadorContrasena_SI === true && contadorCedula_SI === false 
@@ -151,7 +145,22 @@ function GuardarDatosRegistroUsu(){
 function Continuar(){
   window.location.href= "/Inicio/login.html";
 }
+function CapturarEventoClickRegistrar(){
+  var labelErrorContra = document.getElementById("labelContraseñaError");//Obtenber el label validado de las contraseñas
+  var labelErrorContra2 = document.getElementById("labelContraseñaError2");//Obtenber el label validado de las contraseñas
+  var labelCedulaError = document.getElementById("labelCedulaError");//Obtenber el label validado de las contraseñas  
 
+  
+  var botonRegistrar = document.getElementById("btnRegistrar");
+  console.log(botonRegistrar);
+  addEventListener("keydown",(event)=>{
+    labelErrorContra2.style.display = "none";
+    labelCedulaError.style.display = "none";
+    labelErrorContra.style.display = "none";
+    //alert("si entro evento")
+  });
+}
+CapturarEventoClickRegistrar();
 /*function ObtenerDaatosLocalStorage (){
   let exist = true;
   if(localStorage.getItem("persona")){
